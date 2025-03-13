@@ -533,43 +533,72 @@
 					<div class="row">
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
+								<!-- Include jQuery (optional, for compatibility) -->
+								<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 								<div class="contact-form">
-								    <form action="https://formsubmit.co/gouthaminadupuri25@gmail.com" method="POST">
-								        <div class="row">
-								            <div class="col-sm-6 col-xs-12">
-								                <div class="form-group">
-								                    <input type="text" class="form-control" id="name" placeholder="Name*" name="name" required>
-								                </div><!--/.form-group-->
-								            </div><!--/.col-->
-								            <div class="col-sm-6 col-xs-12">
-								                <div class="form-group">
-								                    <input type="email" class="form-control" id="email" placeholder="Email*" name="email" required>
-								                </div><!--/.form-group-->
-								            </div><!--/.col-->
-								        </div><!--/.row-->
-								        <div class="row">
-								            <div class="col-sm-12">
-								                <div class="form-group">
-								                    <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
-								                </div><!--/.form-group-->
-								            </div><!--/.col-->
-								        </div><!--/.row-->
-								        <div class="row">
-								            <div class="col-sm-12">
-								                <div class="form-group">
-								                    <textarea class="form-control" rows="8" id="comment" placeholder="Message" name="message" required></textarea>
-								                </div><!--/.form-group-->
-								            </div><!--/.col-->
-								        </div><!--/.row-->
-								        <div class="row">
-								            <div class="col-sm-12">
-								                <div class="single-contact-btn">
-								                    <button type="submit" class="contact-btn">Let’s Connect</button>
-								                </div><!--/.single-contact-btn-->
-								            </div><!--/.col-->
-								        </div><!--/.row-->
-								    </form>
-								</div>
+									<form id="contactForm">
+										<input type="hidden" name="_captcha" value="false"> <!-- Prevents reCAPTCHA page -->
+										<input type="hidden" name="_next" value="#"> <!-- Prevents redirect to FormSubmit -->
+										<div class="row">
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+													<input type="text" class="form-control" id="name" placeholder="Name*" name="name" required>
+													</div>
+												</div>
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+													<input type="email" class="form-control" id="email" placeholder="Email*" name="email" required>
+													</div>
+												</div>
+											</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+													</div>
+												</div>
+											</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<textarea class="form-control" rows="8" id="comment" placeholder="Message" name="message" required></textarea>
+													</div>
+												</div>
+											</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="single-contact-btn">
+													<button type="submit" class="contact-btn">Let’s Connect</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									<!-- Success Message -->
+									<div id="successMessage" style="display:none; color: green; font-weight: bold;">
+										 ✅ Message sent successfully!
+										</div>
+									</div>
+								<script>
+									document.getElementById("contactForm").addEventListener("submit", function(event) {
+										event.preventDefault(); // Stop form from reloading
+
+										let formData = new FormData(this); // Get form data
+
+										fetch("https://formsubmit.co/gouthaminadupuri25@gmail.com", {
+											method: "POST",
+											body: formData
+										}).then(response => {
+											if (response.ok) {
+												document.getElementById("successMessage").style.display = "block"; // Show success message
+												document.getElementById("contactForm").reset(); // Clear form
+											} else {
+												alert("Error sending message. Please try again.");
+											}
+										}).catch(error => {
+											alert("Error: " + error);
+										});
+									    });
+									</script>
 							</div><!--/.single-contact-box-->
 						</div><!--/.col-->
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
