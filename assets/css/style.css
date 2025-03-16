@@ -127,7 +127,7 @@ nav.navbar.bootsnav {
 
 .nav-icon {
     font-size: 30px; /* Increase icon size */
-    padding: 20px; /* Add space around icons */
+    padding: 5px; /* Add space around icons */
     color: #555; /* Adjust color if needed */
 }
 
