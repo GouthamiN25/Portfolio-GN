@@ -28,6 +28,30 @@ font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
+/* Ensure adequate space between sections */
+section {
+    margin-bottom: 50px; /* Adjust space between sections */
+    padding-top: 40px; /* Space above each section */
+}
+
+/* Add more space for larger screens */
+@media (min-width: 768px) {
+    section {
+        margin-bottom: 80px;
+        padding-top: 60px;
+    }
+}
+
+/* Check for any conflicting styles */
+.section-title {
+    margin-bottom: 20px !important; /* Ensure uniform space below section titles */
+}
+
+.container {
+    padding: 20px; /* Adds consistent padding */
+}
+
+
 *{
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -127,7 +151,7 @@ nav.navbar.bootsnav {
 
 .nav-icon {
     font-size: 30px; /* Increase icon size */
-    padding: 5px; /* Add space around icons */
+    padding: 20px; /* Add space around icons */
     color: #555; /* Adjust color if needed */
 }
 
