@@ -603,11 +603,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 }
 .single-contact-box {padding-top: 100px;}
 .contact-form  .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
 }
 .contact-form .form-control {
-    padding: 25px;
+    padding: 20px;
     font-size: 14px;
     border: 1px solid #fff;
     border-radius: 0px;
@@ -682,10 +682,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 .single-contact-add-info p {
     color:  #999fb3;
     font-size:  16px;
-    margin-top:  18px;
+    margin-top:  10px;
 }
 .single-contact-add-info {
-    margin-bottom:  26px;
+    margin-bottom:  10px;
 }
 /*.contact-add-info */
 
@@ -710,7 +710,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 .hm-footer-copyright p{
     color: #888ea5;
     text-transform: capitalize;
-    padding: 38px 0;
+    padding: 20px 0;
 }
 .hm-footer-copyright p a {color: #888ea5;}
 /*===============================
