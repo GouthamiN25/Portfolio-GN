@@ -258,7 +258,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 --------------------------------------*/
 
 .about {
-    padding: 50px 0 100px;
+    padding: 20px 0 20px;
 }
 .about-content {
     padding-top: 100px;
@@ -395,7 +395,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 } */
 
 .experience {
-    padding: 50px 0 100px;
+    padding: 20px 0 20px;
     border-top: 1px solid #fcf3f6; /* Same as background color to make it invisible */
 }
 
@@ -477,14 +477,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 --------------------------------------*/
 /* Projects Section */
 .projects {
-    padding: 60px 0;
+    padding: 40px 0;
     background-color: #fcf3f6;
 }
 
 /* Center Section Title */
 .section-heading {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 /* Project Cards Styling */
