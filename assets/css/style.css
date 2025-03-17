@@ -395,12 +395,12 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 } */
 
 .experience {
-    padding: 20px 0 20px;
+    padding: 0px 0 0px;
     border-top: 1px solid #fcf3f6; /* Same as background color to make it invisible */
 }
 
-.experience-content {padding-top: 100px;}
-.single-timeline-box {margin-bottom: 75px;}
+.experience-content {padding-top: 10px;}
+.single-timeline-box {margin-bottom: 10px;}
 
 /*experience-time*/
 .experience-time {
