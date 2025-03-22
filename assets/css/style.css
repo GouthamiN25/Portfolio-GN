@@ -216,7 +216,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
     color: #fff;
     font-size: 54px;
     font-weight: 700;
-    text-transform: none;
+    text-transform: uppercase;
     line-height: 1.5;
     font-family: Constantia, serif;
 }
