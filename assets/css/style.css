@@ -257,6 +257,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
         4.  About
 --------------------------------------*/
 
+/* Fix for anchor scroll offset (navbar height = ~80px) */
+section {
+    scroll-margin-top: 100px;
+}
+
 .about {
     padding: 50px 0 100px;
 }
