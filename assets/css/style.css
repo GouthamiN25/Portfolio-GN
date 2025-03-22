@@ -258,7 +258,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 --------------------------------------*/
 
 .about {
-    padding: 20px 0 20px;
+    padding: 50px 0 100px;
 }
 .about-content {
     padding-top: 100px;
@@ -279,7 +279,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 
 /* About Me Content */
 .single-about-txt h3 {
-    font-size: 24px;
+    font-size: 18px;
     color: #da1133;
     text-transform: initial;
     font-weight: bold;
@@ -322,7 +322,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 
 /* Contact Details */
 .contact-info {
-    margin-top: 30px;
+    margin-top: 5px;
     text-align: center;
 }
 .contact-info p {
