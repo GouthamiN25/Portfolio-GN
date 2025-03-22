@@ -36,7 +36,7 @@ font-family: 'Poppins', sans-serif;
 	box-sizing:border-box;
 }
 body{
-	font-family: Georgia, serif;
+	font-family: Constantia, serif;
 	font-size:16px;
 	color: #676a81;
 	background: #fcf3f6;
@@ -51,13 +51,13 @@ a,a:hover,a:active,a:focus {
 	color: #6a708e;
 	font-size:16px;
 	padding:0;
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 h1,h2,h3,h4,h5,h6 { 
 	margin: 0;
 	color:#43485c;
     font-size: 16px;
-	font-family: Georgia, serif;
+	font-family: Constantia, serif;
 	text-transform: capitalize;
 }
 p {
@@ -65,7 +65,7 @@ p {
 	line-height:1.8;
 	color:#43485c;
 	font-size:14px;
-	font-family: Georgia, serif;
+	font-family: Constantia, serif;
 }
 img{border:none;max-width:100%; height:auto;}
 ul{
@@ -76,7 +76,7 @@ ul{
 ul li {
 	list-style: none;
 }
-select,input,textarea,button{box-shadow:none;outline:0!important; font-family: Georgia, serif;}
+select,input,textarea,button{box-shadow:none;outline:0!important; font-family: Constantia, serif;}
 button {background: transparent;border: 0;}
 
 html,body{
@@ -86,14 +86,14 @@ html,body{
 
 /*=============Style css=========*/
 
-/* Apply Georgia font to all sections */
+/* Apply Constantia font to all sections */
 section, .header-text, .single-about-txt, .contact-info, .skills-container, .project-card, .education, .experience {
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 
-/* Apply Georgia font to buttons and links */
+/* Apply Constantia font to buttons and links */
 .header-text a, .project-link, .single-contact-btn, .contact-btn {
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 /*-------------------------------------
         2. Header
@@ -209,7 +209,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 
 /*.header-text-area*/
 .header-text {
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 
 .header-text h2 {
@@ -218,7 +218,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.5;
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 .header-text h2 span {color: #da1133;}
 .header-text p {
@@ -228,7 +228,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
     text-transform: uppercase;
     margin: 30px 0 60px;
     letter-spacing: 1px;
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 .header-text a {
     width: 200px;
@@ -245,7 +245,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
     -ms-transition: 0.5s linear; 
     -o-transition: 0.5s linear; 
     transition: 0.5s linear;
-    font-family: Georgia, serif;
+    font-family: Constantia, serif;
 }
 .header-text a:hover{ 
     box-shadow: 0 5px 20px rgba(0,0,0,.4);
