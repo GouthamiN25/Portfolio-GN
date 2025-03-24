@@ -291,7 +291,7 @@ section {
 }
 .single-about-txt p {
     font-size: 16px;
-    color: #000000;
+    color: #383636;
     padding: 10px 0;
     line-height: 1.6;
 }
@@ -388,7 +388,7 @@ section {
 /* Course Description */
 .timeline-content .description {
     font-size: 14px;
-    color: #333;
+    color: #383636;
     margin-top: 10px;
 }
 /*-------------------------------------
@@ -454,14 +454,14 @@ section {
     text-transform: uppercase;
 }
 .timeline-content h5 {
-    color: #636a82;
+    color: #000000;
     font-size: 14px;
     font-weight: 300;
     margin: 18px 0 20px;
 }
 .main-timeline .description {
     font-size: 14px;
-    color: #999fb3;
+    color: #000000;
 }
 .main-timeline .timeline-content.right{
     float: right;
@@ -519,21 +519,21 @@ section {
 .project-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #333;
+    color: #000000;
 }
 
 /* Project Type (Small Label Below Title) */
 .project-type {
     display: block;
     font-size: 14px;
-    color: #777;
+    color: #383636;
     margin-bottom: 10px;
 }
 
 /* Project Description */
 .project-card p {
     font-size: 14px;
-    color: #555;
+    color: #383636;
 }
 
 /* Project View Button */
@@ -713,7 +713,7 @@ section {
 }/*hm-foot-icon*/
 
 .hm-footer-copyright p{
-    color: #000000;
+    color: #383636;
     text-transform: capitalize;
     padding: 10px 0;
 }
