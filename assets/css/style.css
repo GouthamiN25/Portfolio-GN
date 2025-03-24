@@ -39,7 +39,7 @@ body{
 	font-family: Constantia, serif;
 	font-size:16px;
 	color: #676a81;
-	background: #000000;
+	background: #fcf3f6;
     max-width:1920px;
     margin:0 auto;
 	overflow-x:hidden;
@@ -332,7 +332,7 @@ section {
 }
 .contact-info p {
     font-size: 16px;
-    color: #000000;
+    color: #fcf3f6;
     margin: 5px 0;
 }
 .contact-info a {
@@ -351,7 +351,7 @@ section {
 --------------------------------------*/
 .education {
     text-align: center;
-    background: #000000;
+    background: #fcf3f6;
     padding: 50px 0;
 }
 
