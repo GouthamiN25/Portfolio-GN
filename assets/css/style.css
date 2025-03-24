@@ -291,7 +291,7 @@ section {
 }
 .single-about-txt p {
     font-size: 16px;
-    color: #fff;
+    color: #000000;
     padding: 10px 0;
     line-height: 1.6;
 }
@@ -327,7 +327,7 @@ section {
 
 /* Contact Details */
 .contact-info {
-    margin-top: 5px;
+    margin-top: 1px;
     text-align: center;
 }
 .contact-info p {
