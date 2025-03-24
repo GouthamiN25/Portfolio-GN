@@ -284,7 +284,7 @@ section {
 
 /* About Me Content */
 .single-about-txt h3 {
-    font-size: 60px;
+    font-size: 40px;
     color: #da1133;
     text-transform: initial;
     font-weight: bold;
@@ -375,7 +375,7 @@ section {
 
 /* Styling Heading */
 .section-heading h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     color: #ff0051; /* Red color for heading */
 }
@@ -563,7 +563,7 @@ section {
 }
 
 .section-heading h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     color: #da1133;
     margin-bottom: 20px;
