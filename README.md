@@ -1,5 +1,4 @@
-# GouthamiN25.github.io
-
+## Portfolio
 Gouthami Nadupuri Portfolio
 
  https://gouthamin25.github.io/
