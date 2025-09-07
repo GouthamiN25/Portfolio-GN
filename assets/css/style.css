@@ -114,8 +114,19 @@ nav.navbar.bootsnav {
     box-shadow: 0 3px 15px rgba(0,0,0,.2);
 }
 
+.navbar-header a.navbar-brand {
+    display: inline-block;
+    color: #da1133;   /* Your red color */
+    font-size: 28px;
+    font-weight: 700;
+    padding: 10px 0;  /* Adjust spacing */
+    text-transform: uppercase;
+    background: transparent !important; /* Remove background */
+    box-shadow: none !important;        /* Remove any box effect */
+}
+
 /*.navbar-brand*/
-.navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus {
+/*.navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus {
     display: inline-block;
     color: #da1133;
     font-size: 20px;
@@ -123,7 +134,7 @@ nav.navbar.bootsnav {
     padding: 33px 0px 57px;
     text-transform: uppercase;
 }
-/*.navbar-brand*/
+/*.navbar-brand*/*/
 
 .nav-icon {
     font-size: 30px; /* Increase icon size */
@@ -768,3 +779,4 @@ section {
     100%  {bottom:7px;}
 }
 /*========================Thank you=================
+
