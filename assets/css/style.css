@@ -35,6 +35,17 @@ font-family: 'Poppins', sans-serif;
 	-ms-box-sizing:border-box;
 	box-sizing:border-box;
 }
+
+/* Position the particle container behind everything */
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 body{
 	font-family: Constantia, serif;
 	font-size:16px;
@@ -779,4 +790,5 @@ section {
     100%  {bottom:7px;}
 }
 /*========================Thank you=================
+
 
