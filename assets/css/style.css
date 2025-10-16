@@ -411,6 +411,134 @@ section {
     border-top: 1px solid #da1133;
 } */
 
+/* === Experience styles === */
+:root{
+  --bg: #f8eeee;           /* your pale pink page bg */
+  --accent: #c0132b;       /* your red headings */
+  --ink: #2a2a2a;
+  --card: #ffffff;
+  --muted: #6f6f6f;
+  --ring: rgba(192,19,43,.12);
+}
+
+.xp{
+  background: var(--bg);
+  padding: 6rem 1rem;
+}
+.xp__wrap{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.xp__title{
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--accent);
+  margin: 0 0 3rem;
+  letter-spacing: .4px;
+}
+
+.xp__timeline{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.xp__timeline::before{
+  content:"";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--ring), var(--accent), var(--ring));
+  opacity: .35;
+}
+
+/* items */
+.xp__item{
+  position: relative;
+  margin: 0 0 2.5rem;
+}
+.xp__dot{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px var(--ring);
+}
+
+/* card */
+.xp__card{
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.25rem;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  padding: 1.25rem 1.5rem;
+  width: min(460px, 90vw);
+  position: relative;
+}
+
+/* alternate left/right */
+.xp__item:nth-child(odd) .xp__card{
+  margin-left: calc(50% + 1.5rem);
+}
+.xp__item:nth-child(even) .xp__card{
+  margin-right: calc(50% + 1.5rem);
+  margin-left: auto;
+}
+
+/* logo */
+.xp__logo{
+  display:flex; align-items:center; justify-content:center;
+  border-radius: 12px;
+  background: #faf7f7;
+  border: 1px solid #f0e1e1;
+}
+.xp__logo img{
+  max-width: 70%;
+  max-height: 46px;
+  object-fit: contain;
+  filter: saturate(105%);
+}
+
+/* text */
+.xp__meta h3{
+  margin: .1rem 0 .25rem;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+}
+.xp__role{
+  font-weight: 600;
+  color: var(--accent);
+  margin: .25rem 0 .15rem;
+}
+.xp__date{
+  color: var(--muted);
+  font-size: .95rem;
+  margin: .15rem 0 0;
+}
+.xp__loc{
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* mobile: stack center */
+@media (max-width: 800px){
+  .xp__timeline::before{ left: 24px; transform:none; }
+  .xp__dot{ left: 24px; transform: translateY(10px); }
+  .xp__card{
+    margin: 0 0 0 60px !important;
+    width: auto;
+  }
+}
+
 .experience {
     padding: 0px 0 0px;
     border-top: 1px solid #fcf3f6; /* Same as background color to make it invisible */
@@ -780,6 +908,7 @@ section {
     100%  {bottom:7px;}
 }
 /*========================Thank you=================
+
 
 
 
