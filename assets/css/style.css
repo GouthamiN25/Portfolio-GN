@@ -406,6 +406,138 @@ section {
 /*-------------------------------------
         6. Experience
 -------------------------------------*/
+/* ===== New Experience Timeline ===== */
+.experience {
+  padding: 50px 0 80px;
+  background: #fcf3f6; /* keep your background */
+}
+
+/* container for the full timeline */
+.exp-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+}
+
+/* vertical center line */
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #b2c1ce; /* soft grey line from your theme */
+  transform: translateX(-50%);
+}
+
+/* individual item */
+.exp-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  width: 50%;
+  padding: 18px 0;
+}
+
+/* alternate sides */
+.exp-item.left  { float: left;  clear: both; padding-right: 40px; }
+.exp-item.right { float: right; clear: both; padding-left:  40px; }
+
+/* connector dot to the center line */
+.exp-item::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  width: 12px;
+  height: 12px;
+  background: #da1133;         /* your red */
+  border: 3px solid #fcf3f6;   /* halo to blend with bg */
+  border-radius: 50%;
+  z-index: 2;
+}
+.exp-item.left::after  { right: -6px; }
+.exp-item.right::after { left:  -6px; }
+
+/* small logo circle */
+.exp-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  background: #fad9de;             /* soft card red you use in projects */
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+.exp-logo img {
+  max-width: 90%;
+  height: auto;
+}
+
+/* card */
+.exp-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  border: 1px solid #f1c6cf;
+}
+
+/* header (role + date) */
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.exp-role {
+  font-family: Constantia, serif; /* keep your font */
+  font-size: 18px;
+  color: #43485c;
+  font-weight: 600;
+}
+.exp-dates {
+  font-size: 13px;
+  color: #da1133;     /* your accent red */
+  background: #fad9de;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* company + location */
+.exp-company {
+  font-size: 16px;
+  text-transform: none;
+  color: #090909;
+  margin-top: 2px;
+}
+.exp-loc {
+  font-size: 14px;
+  color: #636a82;
+  margin-top: 2px;
+}
+
+/* responsive: stack items and hide center line */
+@media (max-width: 992px) {
+  .exp-timeline::before { left: 24px; } /* line moves to left for mobile style */
+  .exp-item {
+    float: none;
+    width: 100%;
+    grid-template-columns: 64px 1fr;
+    padding: 14px 0 14px 24px;
+  }
+  .exp-item.left,
+  .exp-item.right { padding: 14px 0 14px 24px; }
+  .exp-item::after { left: 18px; right: auto; }
+  .exp-logo {
+    width: 64px; height: 64px; border-radius: 10px;
+  }
+}
+
 /*.experience {
     padding: 50px 0 100px;
     border-top: 1px solid #da1133;
@@ -780,6 +912,7 @@ section {
     100%  {bottom:7px;}
 }
 /*========================Thank you=================
+
 
 
 
