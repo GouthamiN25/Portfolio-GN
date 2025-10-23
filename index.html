@@ -39,6 +39,9 @@
         
         <!--responsive.css-->
         <link rel="stylesheet" href="assets/css/responsive.css">
+
+		<!--themes.css-->
+		<link rel="stylesheet" href="assets/css/themes.css">
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,6 +71,7 @@
 			                    <i class="fa fa-bars"></i>
 			                </button>
 			                <a class="navbar-brand" href="index.html">GN</a>
+                            <button id="themeToggle" class="theme-btn" title="Change theme" aria-label="Change theme">🎨</button>
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
 
@@ -128,6 +132,23 @@
 				<div class="clearfix"></div>
 			</header><!-- /.top-area-->
 			<!-- Top Area End -->
+			
+			<script>	
+  // Available themes (first is your current look)
+  const THEMES = ["pink", "teal", "purple", "midnight", "sand"];
+  const root = document.documentElement;
+  const saved = localStorage.getItem("theme");
+  if (saved && THEMES.includes(saved)) root.setAttribute("data-theme", saved);
+  else root.setAttribute("data-theme", THEMES[0]);
+
+  document.getElementById("themeToggle")?.addEventListener("click", () => {
+    const cur = root.getAttribute("data-theme") || THEMES[0];
+    const next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+</script>
+
 		</body>
 	
 		<!--welcome-hero start -->
@@ -647,10 +668,9 @@
 
  <!--</footer><!--/.footer-copyright-->
 <!-- Footer End -->
-        
-    </body>
-	
+    </body>	
 </html>
+
 
 
 
