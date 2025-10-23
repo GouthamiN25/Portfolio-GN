@@ -1,75 +1,26 @@
-/* assets/css/themes.css */
+/* =========================
+   assets/css/themes.css
+   Theme tokens + mappings
+   ========================= */
 
-/* === Base application of theme tokens (beats hard-coded colors) === */
-body {
-  background: var(--bg) !important;
-  color: var(--text) !important;
-}
-.section-heading h2,
-h1,h2,h3,h4,h5,h6 { color: var(--text) !important; }
-
-nav.navbar.bootsnav,
-nav.navbar.bootsnav.no-background {
-  background: var(--bg) !important;
-  border-bottom: 1px solid var(--border) !important;
-  box-shadow: 0 3px 15px var(--shadow) !important;
-}
-.navbar-header a.navbar-brand { color: var(--accent) !important; }
-nav.navbar.bootsnav ul.nav>li>a { color: var(--text) !important; }
-nav.navbar.bootsnav ul.nav>li>a:hover { color: var(--accent) !important; }
-
-.welcome-hero:before { background: var(--hero-scrim) !important; }
-
-.header-text a, .project-link, .contact-form .single-contact-btn {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-}
-.project-card { background: var(--accent-soft) !important; }
-.exp-card2,
-.contact-form .form-control {
-  background: var(--card) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 10px 24px var(--shadow) !important;
-}
-
-/* === Theme switcher button === */
-.theme-btn{
-  margin-left: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  cursor: pointer;
-  box-shadow: 0 4px 10px var(--shadow);
-}
-.theme-btn:hover{ filter: brightness(1.05); }
-@media (max-width: 768px){
-  .theme-btn{ padding: 6px 12px; }
-}
-
-
-/* ------------- Base variable names ------------- */
+/* ---------- 1) Semantic tokens (default values) ---------- */
 :root {
-  /* semantic tokens */
   --bg:        #fcf3f6;
   --text:      #43485c;
   --muted:     #636a82;
   --card:      #ffffff;
-  --accent:    #da1133;   /* buttons, highlights */
-  --accent-soft:#fad9de;  /* light backgrounds / chips */
+  --accent:    #da1133;     /* buttons, highlights */
+  --accent-soft:#fad9de;    /* soft surfaces/chips */
   --border:    #f1c6cf;
   --shadow:    rgba(0,0,0,.10);
   --hero-scrim:rgba(31,44,108,.65); /* welcome overlay */
 
-  /* utility tokens */
+  /* util */
   --chip-text: var(--accent);
 }
 
-/* ------------- Themes (switch by [data-theme]) ------------- */
-
-/* Your current palette (default) */
+/* ---------- 2) Palettes (switch via html[data-theme]) ---------- */
+/* Pink (default) */
 html[data-theme="pink"] {
   --bg:#fcf3f6; --text:#43485c; --muted:#636a82;
   --card:#ffffff; --accent:#da1133; --accent-soft:#fad9de;
@@ -77,15 +28,15 @@ html[data-theme="pink"] {
   --hero-scrim:rgba(31,44,108,.65);
 }
 
-/* Teal (fresh) */
+/* Teal */
 html[data-theme="teal"] {
   --bg:#f0fbfa; --text:#16343a; --muted:#3f5a60;
   --card:#ffffff; --accent:#0f766e; --accent-soft:#c7f2ee;
   --border:#a7e7df; --shadow:rgba(0,0,0,.08);
-  --hero-scrim:rgba(6, 78, 59, .55);
+  --hero-scrim:rgba(6,78,59,.55);
 }
 
-/* Purple (playful) */
+/* Purple */
 html[data-theme="purple"] {
   --bg:#f7f3ff; --text:#3a2d53; --muted:#5b4a7a;
   --card:#ffffff; --accent:#6d28d9; --accent-soft:#e9ddff;
@@ -102,72 +53,94 @@ html[data-theme="midnight"] {
   --chip-text:#e5e7eb;
 }
 
-/* Sand (warm neutral) */
+/* Sand */
 html[data-theme="sand"] {
   --bg:#faf6ef; --text:#3e3a33; --muted:#6b665d;
   --card:#ffffff; --accent:#b45309; --accent-soft:#f2e9da;
   --border:#eadfcd; --shadow:rgba(0,0,0,.08);
-  --hero-scrim:rgba(68, 64, 60, .45);
+  --hero-scrim:rgba(68,64,60,.45);
 }
 
-/* ------------- Global overrides using variables ------------- */
+/* ---------- 3) Global mappings (override legacy fixed colors) ---------- */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
 
-/* Page background + default text */
-body { background: var(--bg); color: var(--text); }
+h1,h2,h3,h4,h5,h6 { color: var(--text) !important; }
+.section-heading h2 { color: var(--accent) !important; }
 
-/* Section titles use accent */
-.section-heading h2 { color: var(--accent); }
+/* Navbar */
+nav.navbar.bootsnav,
+nav.navbar.bootsnav.no-background {
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 3px 15px var(--shadow) !important;
+}
+.navbar-header a.navbar-brand { color: var(--accent) !important; }
+nav.navbar.bootsnav ul.nav>li>a { color: var(--text) !important; }
+nav.navbar.bootsnav ul.nav>li>a:hover { color: var(--accent) !important; }
 
-/* Navbar background (transparent look keeps your design) */
-nav.navbar.bootsnav { background-color: var(--bg); box-shadow: 0 3px 15px var(--shadow); }
-.navbar-header a.navbar-brand { color: var(--accent); }
+/* Hero */
+.welcome-hero:before { background: var(--hero-scrim) !important; }
+.header-text p { color: #fff !important; } /* keep hero tagline readable */
 
-/* Buttons (hero + links) */
+/* Buttons / CTAs */
 .header-text a,
 .project-link,
-.contact-form .single-contact-btn { 
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+.contact-form .single-contact-btn {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  transition: filter .25s ease;
 }
 .header-text a:hover,
 .project-link:hover,
-.single-contact-btn:hover { 
-  background: var(--accent);
-  border-color: var(--accent);
-  filter: brightness(0.92);
+.single-contact-btn:hover {
+  filter: brightness(.92);
 }
 
-/* Welcome overlay tint driven by theme */
-.welcome-hero:before { background: var(--hero-scrim); }
-
-/* Cards */
+/* Cards & inputs */
 .project-card,
-.exp-card2 { 
-  background: var(--card);
-  border-color: var(--border);
-  box-shadow: 0 10px 24px var(--shadow);
+.exp-card2,
+.contact-form .form-control {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 10px 24px var(--shadow) !important;
+  color: var(--text) !important;
 }
 
-/* Experience chips / soft areas */
-.exp-logo { background: var(--accent-soft); }
-.exp-badge { background: var(--accent-soft); color: var(--chip-text); }
+/* Experience card accents */
+.exp-logo { background: var(--accent-soft) !important; }
+.exp-badge { background: var(--accent-soft) !important; color: var(--chip-text) !important; }
 
-/* Project soft background */
-.projects .project-card { background: var(--accent-soft); }
+/* Projects soft background */
+.projects .project-card { background: var(--accent-soft) !important; }
 
-/* Text colors */
-p, .exp-company { color: var(--text); }
-.exp-loc, .project-type, .contact-add-head p, .single-contact-add-info p { color: var(--muted); }
+/* Secondary text */
+p, .exp-company { color: var(--text) !important; }
+.exp-loc, .project-type, .contact-add-head p, .single-contact-add-info p { color: var(--muted) !important; }
 
-/* Links on dark theme */
+/* Dark-theme link tweak */
 html[data-theme="midnight"] a { color: #c7d2fe; }
-html[data-theme="midnight"] .header-text p { color:#e5e7eb; }
 
-/* Theme button */
+/* ---------- 4) Theme toggle button ---------- */
 .theme-btn{
-  margin-left:12px; border:1px solid var(--border); background:var(--card);
-  padding:6px 10px; border-radius:10px; line-height:1; cursor:pointer;
+  margin-left: 12px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  line-height: 1;
+  cursor: pointer;
   box-shadow: 0 2px 8px var(--shadow);
+  transition: transform .12s ease, filter .2s ease, background .2s ease;
 }
-.theme-btn:hover{ filter:brightness(0.97); }
+.theme-btn:hover{ filter: brightness(1.05); }
+.theme-btn:active{ transform: scale(.98); }
+
+/* Mobile */
+@media (max-width: 768px){
+  .theme-btn{ padding: 6px 12px; }
+}
