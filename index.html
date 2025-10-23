@@ -132,23 +132,6 @@
 				<div class="clearfix"></div>
 			</header><!-- /.top-area-->
 			<!-- Top Area End -->
-			
-			<script>	
-  // Available themes (first is your current look)
-  const THEMES = ["pink", "teal", "purple", "midnight", "sand"];
-  const root = document.documentElement;
-  const saved = localStorage.getItem("theme");
-  if (saved && THEMES.includes(saved)) root.setAttribute("data-theme", saved);
-  else root.setAttribute("data-theme", THEMES[0]);
-
-  document.getElementById("themeToggle")?.addEventListener("click", () => {
-    const cur = root.getAttribute("data-theme") || THEMES[0];
-    const next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  });
-</script>
-
 		</body>
 	
 		<!--welcome-hero start -->
@@ -668,8 +651,22 @@
 
  <!--</footer><!--/.footer-copyright-->
 <!-- Footer End -->
-    </body>	
-</html>
+		<script>
+			// Available themes (first is your current look)
+			const THEMES = ["pink", "teal", "purple", "midnight", "sand"];
+			const root = document.documentElement;
+			const saved = localStorage.getItem("theme");
+			if (saved && THEMES.includes(saved)) root.setAttribute("data-theme", saved);
+			else root.setAttribute("data-theme", THEMES[0]);
+			document.getElementById("themeToggle")?.addEventListener("click", () => {
+				const cur = root.getAttribute("data-theme") || THEMES[0];
+				const next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
+				root.setAttribute("data-theme", next);
+				localStorage.setItem("theme", next);
+				});
+			</script>
+		</body>
+	</html>
 
 
 
