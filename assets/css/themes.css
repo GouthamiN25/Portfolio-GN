@@ -1,0 +1,123 @@
+/* assets/css/themes.css */
+
+/* ------------- Base variable names ------------- */
+:root {
+  /* semantic tokens */
+  --bg:        #fcf3f6;
+  --text:      #43485c;
+  --muted:     #636a82;
+  --card:      #ffffff;
+  --accent:    #da1133;   /* buttons, highlights */
+  --accent-soft:#fad9de;  /* light backgrounds / chips */
+  --border:    #f1c6cf;
+  --shadow:    rgba(0,0,0,.10);
+  --hero-scrim:rgba(31,44,108,.65); /* welcome overlay */
+
+  /* utility tokens */
+  --chip-text: var(--accent);
+}
+
+/* ------------- Themes (switch by [data-theme]) ------------- */
+
+/* Your current palette (default) */
+html[data-theme="pink"] {
+  --bg:#fcf3f6; --text:#43485c; --muted:#636a82;
+  --card:#ffffff; --accent:#da1133; --accent-soft:#fad9de;
+  --border:#f1c6cf; --shadow:rgba(0,0,0,.10);
+  --hero-scrim:rgba(31,44,108,.65);
+}
+
+/* Teal (fresh) */
+html[data-theme="teal"] {
+  --bg:#f0fbfa; --text:#16343a; --muted:#3f5a60;
+  --card:#ffffff; --accent:#0f766e; --accent-soft:#c7f2ee;
+  --border:#a7e7df; --shadow:rgba(0,0,0,.08);
+  --hero-scrim:rgba(6, 78, 59, .55);
+}
+
+/* Purple (playful) */
+html[data-theme="purple"] {
+  --bg:#f7f3ff; --text:#3a2d53; --muted:#5b4a7a;
+  --card:#ffffff; --accent:#6d28d9; --accent-soft:#e9ddff;
+  --border:#dbc7ff; --shadow:rgba(0,0,0,.08);
+  --hero-scrim:rgba(76,29,149,.55);
+}
+
+/* Midnight (dark) */
+html[data-theme="midnight"] {
+  --bg:#0f172a; --text:#e5e7eb; --muted:#a1a1aa;
+  --card:#111827; --accent:#60a5fa; --accent-soft:#1f2937;
+  --border:#1f2937; --shadow:rgba(0,0,0,.40);
+  --hero-scrim:rgba(2,6,23,.65);
+  --chip-text:#e5e7eb;
+}
+
+/* Sand (warm neutral) */
+html[data-theme="sand"] {
+  --bg:#faf6ef; --text:#3e3a33; --muted:#6b665d;
+  --card:#ffffff; --accent:#b45309; --accent-soft:#f2e9da;
+  --border:#eadfcd; --shadow:rgba(0,0,0,.08);
+  --hero-scrim:rgba(68, 64, 60, .45);
+}
+
+/* ------------- Global overrides using variables ------------- */
+
+/* Page background + default text */
+body { background: var(--bg); color: var(--text); }
+
+/* Section titles use accent */
+.section-heading h2 { color: var(--accent); }
+
+/* Navbar background (transparent look keeps your design) */
+nav.navbar.bootsnav { background-color: var(--bg); box-shadow: 0 3px 15px var(--shadow); }
+.navbar-header a.navbar-brand { color: var(--accent); }
+
+/* Buttons (hero + links) */
+.header-text a,
+.project-link,
+.contact-form .single-contact-btn { 
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.header-text a:hover,
+.project-link:hover,
+.single-contact-btn:hover { 
+  background: var(--accent);
+  border-color: var(--accent);
+  filter: brightness(0.92);
+}
+
+/* Welcome overlay tint driven by theme */
+.welcome-hero:before { background: var(--hero-scrim); }
+
+/* Cards */
+.project-card,
+.exp-card2 { 
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+/* Experience chips / soft areas */
+.exp-logo { background: var(--accent-soft); }
+.exp-badge { background: var(--accent-soft); color: var(--chip-text); }
+
+/* Project soft background */
+.projects .project-card { background: var(--accent-soft); }
+
+/* Text colors */
+p, .exp-company { color: var(--text); }
+.exp-loc, .project-type, .contact-add-head p, .single-contact-add-info p { color: var(--muted); }
+
+/* Links on dark theme */
+html[data-theme="midnight"] a { color: #c7d2fe; }
+html[data-theme="midnight"] .header-text p { color:#e5e7eb; }
+
+/* Theme button */
+.theme-btn{
+  margin-left:12px; border:1px solid var(--border); background:var(--card);
+  padding:6px 10px; border-radius:10px; line-height:1; cursor:pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.theme-btn:hover{ filter:brightness(0.97); }
