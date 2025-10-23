@@ -1,5 +1,55 @@
 /* assets/css/themes.css */
 
+/* === Base application of theme tokens (beats hard-coded colors) === */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+.section-heading h2,
+h1,h2,h3,h4,h5,h6 { color: var(--text) !important; }
+
+nav.navbar.bootsnav,
+nav.navbar.bootsnav.no-background {
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 3px 15px var(--shadow) !important;
+}
+.navbar-header a.navbar-brand { color: var(--accent) !important; }
+nav.navbar.bootsnav ul.nav>li>a { color: var(--text) !important; }
+nav.navbar.bootsnav ul.nav>li>a:hover { color: var(--accent) !important; }
+
+.welcome-hero:before { background: var(--hero-scrim) !important; }
+
+.header-text a, .project-link, .contact-form .single-contact-btn {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+.project-card { background: var(--accent-soft) !important; }
+.exp-card2,
+.contact-form .form-control {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 10px 24px var(--shadow) !important;
+}
+
+/* === Theme switcher button === */
+.theme-btn{
+  margin-left: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+.theme-btn:hover{ filter: brightness(1.05); }
+@media (max-width: 768px){
+  .theme-btn{ padding: 6px 12px; }
+}
+
+
 /* ------------- Base variable names ------------- */
 :root {
   /* semantic tokens */
