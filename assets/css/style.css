@@ -96,6 +96,67 @@ section, .header-text, .single-about-txt, .contact-info, .skills-container, .pro
 .header-text a, .project-link, .single-contact-btn, .contact-btn {
     font-family: Constantia, serif;
 }
+
+/* ===== GN Pink Theme (Qdrant-style) ===== */
+:root {
+  --gn-bg-page: #da254c;      /* main pink background */
+  --gn-bg-section: #b81c1c;   /* darker inner panel */
+  --gn-bg-card: #e35b76;      /* cards / tiles */
+  --gn-bg-soft: #eea3b1;      /* soft accent */
+  --gn-text-on-pink: #ffffff;
+}
+
+/* Page background */
+body {
+  background-color: var(--gn-bg-page) !important;
+  color: var(--gn-text-on-pink);
+}
+
+/* Each big band/section */
+section {
+  background-color: var(--gn-bg-section);
+  border-radius: 32px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+}
+
+/* Generic cards: projects, experience, education, etc. */
+.card,
+.project,
+.project-card,
+.project-item,
+.education-item,
+.experience-item,
+.skill-item {
+  background-color: var(--gn-bg-card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Headings & nav links stay white */
+h1, h2, h3, h4, h5, h6,
+nav a,
+a.nav-link {
+  color: #ffffff !important;
+}
+
+/* Buttons – optional but looks nice with this theme */
+button,
+.btn,
+.btn-primary {
+  background-color: var(--gn-bg-card) !important;
+  border-color: var(--gn-bg-soft) !important;
+  color: #ffffff !important;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover {
+  background-color: var(--gn-bg-soft) !important;
+  color: #ffffff !important;
+}
+
 /*-------------------------------------
         2. Header
 --------------------------------------*/
@@ -862,6 +923,7 @@ section {
     100%  {bottom:7px;}
 }
 /*========================Thank you=================
+
 
 
 
