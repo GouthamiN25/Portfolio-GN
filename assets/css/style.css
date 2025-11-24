@@ -176,6 +176,16 @@ a {
   opacity: 0.85;
 }
 
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links a img,
+.social-links a i {
+  vertical-align: middle;
+}
+
 /* ===== SECTIONS & PANELS ===== */
 .section {
   padding: 0 1.5rem 4.5rem;
@@ -901,5 +911,6 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
 
