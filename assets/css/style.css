@@ -91,60 +91,6 @@ section, .header-text, .single-about-txt, .contact-info, .skills-container, .pro
     font-family: Constantia, serif;
 }
 
-/* ===== GN Pink Theme (Qdrant-style) – COLORS ONLY ===== */
-:root {
-  --gn-bg-page: #da254c;      /* main pink background */
-  --gn-bg-section: #b81c1c;   /* darker inner panel */
-  --gn-bg-card: #e35b76;      /* cards / tiles */
-  --gn-bg-soft: #eea3b1;      /* soft accent */
-  --gn-text-on-pink: #ffffff;
-}
-
-/* Page background color */
-body {
-  background-color: var(--gn-bg-page) !important;
-  color: var(--gn-text-on-pink);
-}
-
-/* Basic section background color (layout is unchanged) */
-section {
-  background-color: transparent;
-}
-
-/* Generic cards: only color (no layout change) */
-.card,
-.project,
-.project-card,
-.project-item,
-.education-item,
-.experience-item,
-.skill-item {
-  background-color: var(--gn-bg-card);
-}
-
-/* Headings & nav links white on pink */
-h1, h2, h3, h4, h5, h6,
-nav a,
-a.nav-link {
-  color: #ffffff !important;
-}
-
-/* Buttons – only colors */
-button,
-.btn,
-.btn-primary {
-  background-color: var(--gn-bg-card) !important;
-  border-color: var(--gn-bg-soft) !important;
-  color: #ffffff !important;
-}
-
-button:hover,
-.btn:hover,
-.btn-primary:hover {
-  background-color: var(--gn-bg-soft) !important;
-  color: #ffffff !important;
-}
-
 /*-------------------------------------
         2. Header
 --------------------------------------*/
@@ -155,47 +101,40 @@ button:hover,
 @media (min-width: 1024px){}
 
 nav.navbar.bootsnav.no-background {
-    background-color: var(--gn-bg-page);
+    background-color: #fff;
     border: none;
 }
 
 nav.navbar.bootsnav {
-    background-color: var(--gn-bg-page);
+    background-color: #fff;
     border-bottom: transparent;
     box-shadow: 0 3px 15px rgba(0,0,0,.2);
 }
 
+/*.navbar-brand*/
 .navbar-header a.navbar-brand {
     display: inline-block;
-    color: #ffffff;   /* logo text white on pink */
+    color: #da1133;
     font-size: 28px;
     font-weight: 700;
-    padding: 10px 0;
+    padding: 10px 0px 10px;
     text-transform: uppercase;
     background: transparent !important;
     box-shadow: none !important;
 }
-
 /*.navbar-brand*/
-/*.navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus {
-    display: inline-block;
-    color: #da1133;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 33px 0px 57px;
-    text-transform: uppercase;
-}
-/*.navbar-brand*/*/
 
-.nav-icon {
-    font-size: 30px;
-    padding: 20px;
-    color: #ffffff;
+/*nav*/
+.navbar-default .navbar-toggle {
+    border-color: #da1133;
+    padding: 10px;
 }
-
-.nav-icon:hover {
-    color: #ff0051;
-    transition: 0.5s ease-in-out;
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #da1133;
+}
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
 }
 
 /*.nav li*/
@@ -206,13 +145,13 @@ nav.navbar.bootsnav ul.nav > li > a {
     -webkit-transition: 0.5s linear; 
     -moz-transition: 0.5s linear; 
     -ms-transition: 0.5s linear; 
-    -o-transition: 0.5s linear; 
+    -o-transition: 0.5 linear;
     transition: 0.5s linear;
 }
-nav.navbar.bootsnav ul.nav > li > a {padding: 35px 20px;}
+nav.navbar.bootsnav ul.nav > li > a {padding: 25px 25px;}
 nav.navbar.bootsnav ul.nav > li > a:hover,
 nav.navbar.bootsnav ul.nav > li > a:focus,
-nav.navbar.bootsnav ul.nav > li.active>a{color: #ffbfd0;}
+nav.navbar.bootsnav ul.nav > li.active>a{color: #ff0051;}
 
 nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after {
     content: "";
@@ -221,10 +160,10 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
     font-size: 8px;
     margin-left: 15px;
 }
-.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a {color:#ffffff;}
+.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a {color:#fff;}
 .sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,
 .sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,
-.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #ffbfd0;}
+.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #ff0051;}
 /*.nav li*/
 
 /*.menu-ui-design*/
@@ -244,11 +183,11 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 nav.navbar.bootsnav .navbar-toggle {
     position: relative;
     background-color: transparent;
-    border: 1px solid #ffffff;
+    border: 1px solid #da1133;
     padding: 10px;
     top: 0;
 }
-nav.navbar.bootsnav .navbar-toggle i{color: #ffffff;}
+nav.navbar.bootsnav .navbar-toggle i{color: #da1133;}
 /*.navbar-toggle */
 /*-------------------------------------
         3.  Welcome-hero
@@ -272,6 +211,15 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffffff;}
     width:100%;
     height:100%;
 }
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers entire section */
+    z-index: -1; /* Places video behind other content */
+}
 
 /*.header-text-area*/
 .header-text {
@@ -286,7 +234,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffffff;}
     line-height: 1.5;
     font-family: Constantia, serif;
 }
-.header-text h2 span {color: #ffbfd0;}
+.header-text h2 span {color: #ff0051;}
 .header-text p {
     color: #fff;
     font-size: 40px;
@@ -303,8 +251,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffffff;}
     border-radius: 3px;
     text-transform: capitalize;
     color: #fff;
-    background: var(--gn-bg-card);
-    border:1px solid var(--gn-bg-soft);
+    background: #ff0051; 
+    border:1px solid #fff; 
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
     -webkit-transition: 0.5s linear; 
     -moz-transition: 0.5s linear; 
@@ -315,10 +263,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ffffff;}
 }
 .header-text a:hover{ 
     box-shadow: 0 5px 20px rgba(0,0,0,.4);
-    background:var(--gn-bg-soft);
-    border: 1px solid var(--gn-bg-soft);
+    background:#fcf3f6; 
+    border: 1px solid #da1133;
+    color:red;  
 }
 /*.header-text-area*/
+
+
 /*-------------------------------------
         4.  About
 --------------------------------------*/
@@ -352,16 +303,17 @@ section {
 /* About Me Content */
 .single-about-txt h3 {
     font-size: 40px;
-    color: #ffffff;
+    color: #fcf3f6;
     text-transform: initial;
     font-weight: bold;
 }
 .single-about-txt p {
     font-size: 16px;
-    color: #ffffff;
+    color: #fcf3f6;
     padding: 10px 0;
     line-height: 1.6;
 }
+
 
 /* Social Media Icons Styling */
 .social-icons {
@@ -384,7 +336,7 @@ section {
 .social-icons ul li a {
     display: inline-block;
     font-size: 24px;
-    color: #ffffff;
+    color: #fcf3f6;
     transition: color 0.5s ease-in-out;
 }
 
@@ -399,18 +351,18 @@ section {
 }
 .contact-info p {
     font-size: 24px;
-    color: #ffffff;
+    color: #fcf3f6;
     margin: 5px 0;
 }
 .contact-info a {
-    color: #ffbfd0;
+    color: #ff0051;
     text-decoration: none;
     font-weight: bold;
 }
 .contact-info a:hover {
     text-decoration: underline;
 }
-/*.ab-list-icon */
+
 
 /*.single-about-img */
 /*-------------------------------------
@@ -418,7 +370,7 @@ section {
 --------------------------------------*/
 .education {
     text-align: center;
-    background: var(--gn-bg-section);
+    background: #fcf3f6;
     padding: 50px 0;
 }
 
@@ -429,7 +381,7 @@ section {
 /* Centering Education Timeline */
 .education .row {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center Align */
     align-items: center;
 }
 
@@ -444,26 +396,27 @@ section {
 .section-heading h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #ffffff;
+    color: #333333;
 }
 
 /* Timeline Dot */
 .timeline-horizontal-border i {
-    color: #ffbfd0;
+    color: #da1133;
 }
 
 /* Course Description */
 .timeline-content .description {
     font-size: 14px;
-    color: #ffffff;
+    color: #333333;
     margin-top: 10px;
 }
+
+
 /*-------------------------------------
         6. Experience
 -------------------------------------*/
 .experience { 
     padding: 50px 0 80px; 
-    background: var(--gn-bg-section);
 }
 
 /* ===== Unified Experience Cards (no timeline/dots) ===== */
@@ -482,8 +435,7 @@ section {
   grid-template-columns: 120px 1fr;
   gap: 18px;
   align-items: center;
-  background: var(--gn-bg-card);
-  border: 1px solid #f1c6cf;
+  background: #fcf3f6;
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
@@ -510,29 +462,32 @@ section {
 }
 .exp-role {
   font-family: Constantia, serif;
-  font-size: 18px; color: #ffffff; font-weight: 600;
+  font-size: 18px; color: #383636; font-weight: 600;
 }
 .exp-badge {
-  font-size: 13px; color: #b81c1c;
-  background: #ffbfd0; padding: 2px 10px; border-radius: 999px; white-space: nowrap;
+  font-size: 13px; color: #da1133;
+  background: #ffdbe5; padding: 2px 10px; border-radius: 999px; white-space: nowrap;
 }
 
 /* Company + location */
-.exp-company { font-size: 16px; color: #ffffff; margin-top: 2px; }
-.exp-loc     { font-size: 14px; color: #ffffff; margin-top: 2px; }
+.exp-company { font-size: 16px; color: #383636; margin-top: 2px; }
+.exp-loc     { font-size: 14px; color: #676a81; margin-top: 2px; }
+
+/* Description */
+.exp-desc    { margin-top: 8px; font-size: 14px; color: #676a81; line-height: 1.7; }
 
 /* Mobile layout: stack logo above text */
 @media (max-width: 768px) {
   .exp-card2 { grid-template-columns: 1fr; text-align: left; }
   .exp-logo  { width: 72px; height: 72px; border-radius: 10px; }
 }
+
 /*-------------------------------------
         7. Projects
 --------------------------------------*/
-/* Projects Section */
 .projects {
     padding: 40px 0;
-    background-color: var(--gn-bg-section);
+    background-color: #fff5f8;
 }
 
 /* Center Section Title */
@@ -543,7 +498,7 @@ section {
 
 /* Project Cards Styling */
 .project-card {
-    background: var(--gn-bg-card);
+    background: #fcf3f6;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -568,21 +523,21 @@ section {
 .project-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #383636;
 }
 
 /* Project Type (Small Label Below Title) */
 .project-type {
     display: block;
     font-size: 14px;
-    color: #ffffff;
+    color: #888ea5;
     margin-bottom: 10px;
 }
 
 /* Project Description */
 .project-card p {
     font-size: 14px;
-    color: #ffffff;
+    color: #676a81;
 }
 
 /* Project View Button */
@@ -590,8 +545,8 @@ section {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
-    background-color: var(--gn-bg-card);
-    color: #ffffff;
+    background-color: #ff0051;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -599,9 +554,9 @@ section {
 }
 
 .project-link:hover {
-    background-color: var(--gn-bg-soft);
+    background-color: #fad9de;
 }
----------
+
 
 /* Projects Section */
 .projects-section {
@@ -631,7 +586,7 @@ section {
 
 /* Card */
 .project-card {
-  background: var(--gn-bg-card);          
+  background: #fcf3f6;          
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45);
@@ -712,13 +667,13 @@ section {
 .skills-container {
     text-align: center;
     padding: 20px;
-    background-color: var(--gn-bg-section);
+    background-color: #fff5f8;
 }
 
 .section-heading h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #ffffff;
+    color: #333333;
     margin-bottom: 20px;
 }
 
@@ -749,14 +704,14 @@ section {
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff;
+    color: #383636;
 }
 
 /*-------------------------------------
         9. Contact
 --------------------------------------*/
 .contact {
-    background: var(--gn-bg-section);
+    background: #fff;
     padding: 50px 0 100px;
 }
 .single-contact-box {padding-top: 100px;}
@@ -784,8 +739,8 @@ section {
     height:50px;
     text-transform:capitalize;
     margin-top: 3px;
-    background: var(--gn-bg-card);
-    border: 1px solid var(--gn-bg-soft);
+    background: #ff0051; 
+    border: 1px solid #fff;
     cursor:pointer;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
      -webkit-transition: .5s; 
@@ -799,7 +754,7 @@ section {
     margin-top:0px;
     outline: 0 !important;
     border:0;
-    color: #ffffff;
+    color: #fff;
     border-radius: 0px;
     font-size:14px;
     -webkit-transition: .5s; 
@@ -810,22 +765,20 @@ section {
     
 }
 .single-contact-btn:hover{
-    background: var(--gn-bg-soft);
-    border: 1px solid var(--gn-bg-soft);
+    background: #fff;
+    border: 1px solid #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
-
-/*--contact button--*/
 
 /* contact-adress */
 .contact-add-head h3 {
     font-size:  24px;
-    color:  #ffffff;
+    color:  #363a47;
 }
 .contact-add-head p {
     font-size:  16px;
     text-transform: capitalize;
-    color:  #ffffff;
+    color:  #888ea5;
     font-weight:  300;
     margin-top:  6px;
 }
@@ -834,11 +787,11 @@ section {
 /*.contact-add-info */
 .contact-add-info { margin: 42px 0 52px;}
 .single-contact-add-info h3 {
-    color:  #ffffff;
+    color:  #363a47;
     font-weight:  500;
 }
 .single-contact-add-info p {
-    color:  #ffffff;
+    color:  #999fb3;
     font-size:  16px;
     margin-top:  10px;
 }
@@ -853,7 +806,7 @@ section {
 }
 .hm-foot-icon ul li{float:left;}
 .hm-foot-icon ul li>a {
-    color: #ffffff;
+    color: #636a82;
     margin-right:18px;
     -webkit-transition: .3s; 
     -moz-transition:.3s; 
@@ -862,16 +815,16 @@ section {
     transition: .3s;
 }
 .hm-foot-icon ul li>a:hover{
-    color: #ffbfd0;
+    color: #ed145b;
 }/*hm-foot-icon*/
 
 .hm-footer-copyright p{
-    color: #ffffff;
+    color: #383636;
     font-size:  18px;
     text-transform: capitalize;
     padding: 0px 0;
 }
-.hm-footer-copyright p a {color: #ffbfd0;}
+.hm-footer-copyright p a {color: #888ea5;}
 /*===============================
     Scroll Top
 ===============================*/
@@ -920,7 +873,7 @@ section {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
 }
-/*========================Thank you=================*/
+
 
 /* =========================
    GN PROFESSIONAL PINK THEME – OVERRIDES
@@ -1117,7 +1070,6 @@ nav.navbar.bootsnav ul.nav > li.active > a {
   background: #ffffff !important;
   color: var(--gn-accent) !important;
 }
-
 
 
 
