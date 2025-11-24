@@ -185,7 +185,7 @@ a {
   max-width: 1120px;
   margin: 0 auto;
   padding: 3rem 3.5rem;
-  background: #651024;
+  background: #c51f3f;
   border-radius: 30px;
   box-shadow: 0 34px 70px rgba(0, 0, 0, 0.45);
 }
@@ -262,7 +262,7 @@ a {
 }
 
 .exp-card {
-  background: #8b1a33;
+  background: #c51f3f;
   border-radius: 20px;
   padding: 1.3rem 1.4rem 1.4rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
@@ -309,7 +309,7 @@ a {
 }
 
 .project-card {
-  background: #8b1a33;
+  background: #c51f3f;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
@@ -404,7 +404,7 @@ a {
   align-items: flex-start;
   padding: 1.2rem 1.4rem;
   border-radius: 18px;
-  background: #8b1a33;
+  background: #c51f3f;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -468,7 +468,7 @@ a {
 /* Course Description */
 .timeline-content .description {
     font-size: 14px;
-    color: #383636;
+    color: #c51f3f;
     margin-top: 10px;
 }
 /*-------------------------------------
@@ -519,7 +519,7 @@ a {
 }
 .exp-role {
   font-family: Constantia, serif;
-  font-size: 18px; color: #43485c; font-weight: 600;
+  font-size: 18px; color: #f7cf07; font-weight: 600;
 }
 .exp-badge {
   font-size: 13px; color: #da1133;
@@ -527,13 +527,13 @@ a {
 }
 
 /* Company + location (keep your colors/fonts) */
-.exp-company { font-size: 16px; color: #090909; margin-top: 2px; }
-.exp-loc     { font-size: 14px; color: #636a82; margin-top: 2px; }
+.exp-company { font-size: 16px; color: #fcfafa; margin-top: 2px; }
+.exp-loc     { font-size: 14px; color: #edf0f7; margin-top: 2px; }
 
 /* Mobile layout: stack logo above text */
 @media (max-width: 768px) {
   .exp-card2 { grid-template-columns: 1fr; text-align: left; }
-  .exp-logo  { width: 72px; height: 72px; border-radius: 10px; }
+  .exp-logo  { width: 100px; height: 100px; border-radius: 10px; }
 }
 /*-------------------------------------
         7. Projects
@@ -901,4 +901,5 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
