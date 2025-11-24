@@ -922,6 +922,203 @@ section {
 }
 /*========================Thank you=================*/
 
+/* =========================
+   GN PROFESSIONAL PINK THEME – OVERRIDES
+   (layout unchanged – only colors / polish)
+   ========================== */
+
+:root {
+  --gn-accent: #da254c;          /* main brand pink/red */
+  --gn-accent-soft: #ffe0ea;     /* soft pink */
+  --gn-page-bg: #fdf7fb;         /* very light pink */
+  --gn-section-light: #ffffff;   /* white */
+  --gn-section-soft: #fff5f9;    /* very soft pink panel */
+  --gn-text-main: #1f2430;       /* dark slate */
+  --gn-text-muted: #4b5563;      /* softer gray */
+}
+
+/* Global background + text */
+body {
+  background: linear-gradient(180deg, #fff7fb 0%, #fdf7fb 40%, #ffeef5 100%) !important;
+  color: var(--gn-text-main) !important;
+}
+
+/* Headings + text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--gn-text-main) !important;
+}
+p, li,
+.section-heading p,
+.section-header p {
+  color: var(--gn-text-muted) !important;
+}
+
+/* Remove solid panels everywhere – we’ll handle per-section */
+section {
+  background: transparent !important;
+}
+
+/* Alternate section backgrounds for clarity */
+.about,
+.experience,
+.contact {
+  background: var(--gn-section-light) !important;
+}
+
+.education,
+.projects,
+.skills,
+.skill {
+  background: var(--gn-section-soft) !important;
+}
+
+/* Section headings – keep your style, adjust accent */
+.section-heading h2,
+.section-header h2 {
+  color: var(--gn-text-main) !important;
+}
+.section-heading h2::before,
+.section-header h2::before {
+  background: var(--gn-accent) !important;
+}
+
+/* Navbar – clean white bar with pink accent */
+nav.navbar.bootsnav,
+nav.navbar.bootsnav.no-background {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04) !important;
+}
+
+.navbar-header a.navbar-brand {
+  color: var(--gn-accent) !important;
+}
+
+nav.navbar.bootsnav ul.nav > li > a {
+  color: var(--gn-text-main) !important;
+}
+
+nav.navbar.bootsnav ul.nav > li > a:hover,
+nav.navbar.bootsnav ul.nav > li.active > a {
+  color: var(--gn-accent) !important;
+}
+
+/* Hero button – strong CTA */
+.header-text a {
+  background: var(--gn-accent) !important;
+  border: 1px solid var(--gn-accent) !important;
+  color: #ffffff !important;
+}
+.header-text a:hover {
+  background: #ffffff !important;
+  color: var(--gn-accent) !important;
+  border-color: var(--gn-accent) !important;
+}
+
+/* Card-style panels: education, experience, projects, contact, etc. */
+.single-horizontal-timeline,
+.exp-card2,
+.project-card,
+.single-contact-box,
+.skill-item,
+.portfolio .item {
+  background: #ffffff !important;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* Experience text colors */
+.exp-role,
+.exp-company,
+.exp-loc {
+  color: var(--gn-text-main) !important;
+}
+
+/* Education timeline text */
+.timeline-content .description,
+.timeline-content h4,
+.timeline-content h5 {
+  color: var(--gn-text-muted) !important;
+}
+
+/* Project cards */
+.project-card h3 {
+  color: var(--gn-text-main) !important;
+}
+.project-card p,
+.project-type {
+  color: var(--gn-text-muted) !important;
+}
+
+/* Chips / badges */
+.project-tags .tag,
+.exp-badge {
+  background: var(--gn-accent-soft) !important;
+  color: var(--gn-text-main) !important;
+  border: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Project buttons */
+.project-link,
+.project-btn {
+  background: var(--gn-accent) !important;
+  color: #ffffff !important;
+  border-radius: 999px;
+  border: 1px solid var(--gn-accent) !important;
+}
+.project-link:hover,
+.project-btn:hover {
+  background: #ffffff !important;
+  color: var(--gn-accent) !important;
+}
+
+/* Skills */
+.skills-container {
+  background: transparent !important;
+}
+.skill-item span {
+  color: var(--gn-text-main) !important;
+}
+
+/* Contact button */
+.contact-form .single-contact-btn,
+.contact-form .single-contact-btn .contact-btn {
+  background: var(--gn-accent) !important;
+  border-color: var(--gn-accent) !important;
+  color: #ffffff !important;
+}
+.contact-form .single-contact-btn:hover,
+.contact-form .single-contact-btn .contact-btn:hover {
+  background: #ffffff !important;
+  color: var(--gn-accent) !important;
+}
+
+/* Footer + social icons */
+.hm-footer-copyright p {
+  color: var(--gn-text-muted) !important;
+}
+.hm-footer-copyright p a {
+  color: var(--gn-accent) !important;
+}
+.hm-foot-icon ul li > a {
+  color: var(--gn-accent) !important;
+}
+.hm-foot-icon ul li > a:hover {
+  color: var(--gn-text-main) !important;
+}
+
+/* Scroll-to-top button */
+#scroll-Top .return-to-top {
+  background: var(--gn-accent) !important;
+  border-color: var(--gn-accent) !important;
+}
+#scroll-Top .return-to-top:hover {
+  background: #ffffff !important;
+  color: var(--gn-accent) !important;
+}
+
+
 
 
 
