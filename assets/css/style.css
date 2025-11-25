@@ -348,7 +348,7 @@ a {
 }
 
 .project-card {
-  background: #a11a1a;
+  background: #f9044d;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
@@ -443,7 +443,7 @@ a {
   align-items: flex-start;
   padding: 1.2rem 1.4rem;
   border-radius: 18px;
-  background: #a11a1a;
+  background: #f9044d;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -496,18 +496,18 @@ a {
 .section-heading h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #a11a1a; /* Red color for heading */
+    color: #f9044d; /* Red color for heading */
 }
 
 /* Timeline Dot */
 .timeline-horizontal-border i {
-    color: #a11a1a; /* Red timeline dots */
+    color: #f9044d; /* Red timeline dots */
 }
 
 /* Course Description */
 .timeline-content .description {
     font-size: 14px;
-    color: #a11a1a;
+    color: #ffffff;
     margin-top: 10px;
 }
 /*-------------------------------------
@@ -531,7 +531,7 @@ a {
   gap: 18px;
   align-items: center;
   background: #ffffff;
-  border: 1px solid #a11a1a;
+  border: 1px solid #f9044d;
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
@@ -561,7 +561,7 @@ a {
   font-size: 18px; color: #f7cf07; font-weight: 600;
 }
 .exp-badge {
-  font-size: 13px; color: #da1133;
+  font-size: 13px; color: #f9044d;
   background: #fad9de; padding: 2px 10px; border-radius: 999px; white-space: nowrap;
 }
 
@@ -591,7 +591,7 @@ a {
 
 /* Project Cards Styling */
 .project-card {
-    background: #a11a1a;
+    background: #f9044d;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -940,4 +940,5 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
