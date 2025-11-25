@@ -38,7 +38,7 @@ a {
   left: 0;
   right: 0;
   z-index: 20;
-  background: rgba(84, 4, 27, 0.9);
+  background: rgba(249, 4, 77, 0.9);
   backdrop-filter: blur(10px);
 }
 
@@ -148,7 +148,7 @@ a {
 
 .btn-solid {
   background: #fff;
-  color: #c51f3f;
+  color: #a11a1a;
 }
 
 .btn-solid:hover {
@@ -195,7 +195,7 @@ a {
   max-width: 1120px;
   margin: 0 auto;
   padding: 3rem 3.5rem;
-  background: #c51f3f;
+  background: #a11a1a;
   border-radius: 30px;
   box-shadow: 0 34px 70px rgba(0, 0, 0, 0.45);
 }
@@ -272,7 +272,7 @@ a {
 }
 
 .exp-card {
-  background: #bc1c1c;
+  background: #a11a1a;
   border-radius: 20px;
   padding: 1.3rem 1.4rem 1.4rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
@@ -348,7 +348,7 @@ a {
 }
 
 .project-card {
-  background: #bc1c1c;
+  background: #a11a1a;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
@@ -443,7 +443,7 @@ a {
   align-items: flex-start;
   padding: 1.2rem 1.4rem;
   border-radius: 18px;
-  background: #bc1c1c;
+  background: #a11a1a;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -496,18 +496,18 @@ a {
 .section-heading h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #ff0051; /* Red color for heading */
+    color: #a11a1a; /* Red color for heading */
 }
 
 /* Timeline Dot */
 .timeline-horizontal-border i {
-    color: #ff0051; /* Red timeline dots */
+    color: #a11a1a; /* Red timeline dots */
 }
 
 /* Course Description */
 .timeline-content .description {
     font-size: 14px;
-    color: #c51f3f;
+    color: #a11a1a;
     margin-top: 10px;
 }
 /*-------------------------------------
@@ -531,7 +531,7 @@ a {
   gap: 18px;
   align-items: center;
   background: #ffffff;
-  border: 1px solid #f1c6cf;
+  border: 1px solid #a11a1a;
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
@@ -580,7 +580,7 @@ a {
 /* Projects Section */
 .projects {
     padding: 40px 0;
-    background-color: #fcf3f6;
+    background-color: #a11a1a;
 }
 
 /* Center Section Title */
@@ -591,7 +591,7 @@ a {
 
 /* Project Cards Styling */
 .project-card {
-    background: #bc1c1c;
+    background: #a11a1a;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -638,7 +638,7 @@ a {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
-    background-color: #f7adad;
+    background-color: #ffffff;
     color: #d61e1e;
     text-decoration: none;
     font-weight: bold;
@@ -679,7 +679,7 @@ a {
 
 /* Card */
 .project-card {
-  background: #f7adad;          
+  background: #a11a1a;          
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45);
@@ -766,7 +766,7 @@ a {
 .section-heading h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #da1133;
+    color: #a11a1a;
     margin-bottom: 20px;
 }
 
@@ -940,10 +940,3 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-
-
-
