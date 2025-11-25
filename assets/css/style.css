@@ -413,7 +413,7 @@ a {
   gap: 0.5rem;
   padding: 0.9rem 0.7rem;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
+  background: #f9044d;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -940,3 +940,4 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
