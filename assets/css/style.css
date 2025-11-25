@@ -877,7 +877,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: #a11a1a;
+  background: #f9044d;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -951,6 +951,7 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
