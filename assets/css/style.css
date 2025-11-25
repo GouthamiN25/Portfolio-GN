@@ -272,7 +272,7 @@ a {
 }
 
 .exp-card {
-  background: #c51f3f;
+  background: #bc1c1c;
   border-radius: 20px;
   padding: 1.3rem 1.4rem 1.4rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
@@ -348,7 +348,7 @@ a {
 }
 
 .project-card {
-  background: #c51f3f;
+  background: #bc1c1c;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
@@ -443,7 +443,7 @@ a {
   align-items: flex-start;
   padding: 1.2rem 1.4rem;
   border-radius: 18px;
-  background: #c51f3f;
+  background: #bc1c1c;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -591,7 +591,7 @@ a {
 
 /* Project Cards Styling */
 .project-card {
-    background: #f7adad;
+    background: #bc1c1c;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -816,7 +816,7 @@ a {
   align-items: center;
   padding: 1rem 1.3rem;
   border-radius: 18px;
-  background: #8b1a33;
+  background: #bc1c1c;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -866,7 +866,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: #8b1a33;
+  background: #bc1c1c;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -940,6 +940,7 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
