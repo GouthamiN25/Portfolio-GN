@@ -1,633 +1,648 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <!-- meta data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Gouthami Nadupuri – Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <title>Gouthami Nadupuri</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
-
-    <!-- Vendor CSS (keep) -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootsnav.css">
-
-    <!-- Your main CSS (new) -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- You can keep responsive.css if you want, but most things are handled in style.css -->
-    <!-- <link rel="stylesheet" href="assets/css/responsive.css"> -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser.
-        Please <a href="https://browsehappy.com/">upgrade your browser</a>
-        to improve your experience and security.
-      </p>
-    <![endif]-->
-
     <!-- ================= NAVBAR ================= -->
-    <header class="top-area">
-      <div class="header-area">
-        <nav class="navbar navbar-default bootsnav navbar-fixed no-background">
-          <div class="container">
-
-            <!-- Brand & toggle -->
-            <div class="navbar-header">
-              <button type="button"
-                      class="navbar-toggle"
-                      data-toggle="collapse"
-                      data-target="#navbar-menu">
-                <i class="fa fa-bars"></i>
-              </button>
-              <a class="navbar-brand" href="#welcome-hero">GN</a>
-            </div>
-
-            <!-- Menu -->
-            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-              <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                <li class="smooth-menu active"><a href="#welcome-hero">Home</a></li>
-                <li class="smooth-menu"><a href="#about">About</a></li>
-                <li class="smooth-menu"><a href="#education">Education</a></li>
-                <li class="smooth-menu"><a href="#experience">Experience</a></li>
-                <li class="smooth-menu"><a href="#projects">Projects</a></li>
-                <li class="smooth-menu"><a href="#skills">Skills</a></li>
-                <li class="smooth-menu"><a href="#contact">Contact</a></li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-
-          </div><!-- /.container -->
+    <header class="site-header">
+      <div class="nav-container">
+        <div class="nav-brand">GN</div>
+        <nav class="nav-links">
+          <a href="#welcome-hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
         </nav>
-      </div><!-- /.header-area -->
+      </div>
     </header>
 
-    <!-- ================= HERO ================= -->
-    <section id="welcome-hero" class="welcome-hero">
-      <div class="container hero-card">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <div class="header-text">
-              <p class="hero-eyebrow">WELCOME TO MY DIGITAL UNIVERSE</p>
-              <h1 class="hero-title">Gouthami Nadupuri</h1>
-              <p class="hero-subtitle">
-                AI &amp; Data Professional · Full-Stack Developer · Creative Problem Solver
-              </p>
-              <a class="hero-btn" href="#projects">View My Work</a>
-              <a class="hero-btn hero-btn-outline" href="assets/download/GouthamiN-MSDS-Resume.pdf" download>
-                Download Resume
-              </a>
-            </div>
+    <main>
+      <!-- ================= HERO ================= -->
+      <section id="welcome-hero" class="hero">
+        <div class="hero-inner">
+          <p class="hero-eyebrow">WELCOME TO MY DIGITAL UNIVERSE</p>
+          <h1 class="hero-title">Gouthami Nadupuri</h1>
+          <p class="hero-subtitle">
+            AI &amp; Data Professional · Full-Stack Developer · Creative Problem Solver
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+            <a
+              href="assets/download/GouthamiN-MSDS-Resume.pdf"
+              target="_blank"
+              class="btn btn-ghost"
+              >Resume</a
+            >
+          </div>
+
+          <div class="hero-scroll">
+            <a href="#about" aria-label="Scroll to About">
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="section">
-      <div class="container section-card">
-        <div class="row align-items-center">
-          <!-- Profile Image -->
-          <div class="col-lg-4 text-center">
-            <div class="about-img">
-              <img src="assets/images/about/profile_image.jpg"
-                   alt="Gouthami Nadupuri"
-                   class="profile-img">
-            </div>
-          </div>
+      <!-- ================= ABOUT ================= -->
+      <section id="about" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>About Me</h2>
+          </header>
 
-          <!-- About Text -->
-          <div class="col-lg-8">
-            <div class="single-about-txt">
-              <h2 class="section-title">About Me</h2>
+          <div class="about-grid">
+            <div class="about-main">
               <p>
-                I am a Data Scientist with expertise in predictive modeling, machine learning,
-                AI-driven insights, and data engineering. Skilled in NLP, LLMs, data visualization,
-                and cloud technologies, I transform complex data into actionable insights.
-              </p>
-              <p>
-                Proficient in Python, R, SQL, and modern data frameworks, I have experience building
-                ETL pipelines, fraud detection systems, and AI-powered solutions. With tools like
-                Tableau, Power BI, Matplotlib, and Plotly, I create visual stories that support
-                business decisions.
+                I am a Data Scientist with expertise in predictive modeling, machine
+                learning, AI-driven insights, and data engineering. Skilled in NLP,
+                LLMs, data visualization, and cloud technologies, I leverage advanced
+                analytics to transform complex data into actionable insights.
               </p>
               <p>
-                Currently pursuing a Master’s in Data Science, I’m passionate about solving real-world
-                challenges with scalable, data-driven solutions.
+                Proficient in Python, R, SQL, and modern data frameworks, I have
+                experience building ETL pipelines, fraud detection systems, and
+                AI-powered solutions. With tools like Tableau, Power BI, Matplotlib,
+                and Plotly, I design visual stories that support real-world decisions.
               </p>
+              <p>
+                Currently pursuing a Master’s in Data Science, I am passionate about
+                solving real-world challenges with data-driven and human-centered
+                solutions.
+              </p>
+
+              <div class="social-links">
+                <a href="https://github.com/GouthamiN25" target="_blank">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                    alt="GitHub"
+                    width="26"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/"
+                  target="_blank"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn"
+                    width="26"
+                  />
+                </a>
+                <a href="https://twitter.com/go250818" target="_blank">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
+                    alt="Twitter"
+                    width="26"
+                  />
+                </a>
+                <a href="mailto:gouthaminadupuri25@gmail.com">
+                  <i class="fa fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="about-image">
+              <img
+                src="assets/images/about/profile_image.jpg"
+                alt="Gouthami Nadupuri"
+                class="profile-img"
+              />
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Social Media Icons -->
-        <div class="row">
-          <div class="col text-center">
-            <div class="social-icons">
-              <ul>
-                <li>
-                  <a href="https://github.com/GouthamiN25" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                         alt="GitHub" width="25">
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                         alt="LinkedIn" width="25">
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/go250818" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
-                         alt="Twitter" width="25">
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:gouthaminadupuri25@gmail.com">
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <!-- ================= EDUCATION ================= -->
+      <section id="education" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Education</h2>
+          </header>
 
-      </div>
-    </section>
-
-    <!-- ================= EDUCATION ================= -->
-    <section id="education" class="section">
-      <div class="container section-card">
-        <div class="section-heading text-center">
-          <h2 class="section-title">Education</h2>
-        </div>
-
-        <div class="row education-row">
-          <!-- Masters -->
-          <div class="col-md-6">
-            <div class="edu-card">
-              <img src="assets/logo/Uopsf.jpg"
-                   alt="University of the Pacific"
-                   class="edu-logo">
-              <div class="edu-body">
+          <div class="edu-list">
+            <article class="edu-card">
+              <div class="edu-main">
                 <h3>Master of Science in Data Science</h3>
-                <p class="edu-inst">University of the Pacific · San Francisco, USA</p>
-                <p class="edu-year">2023 – 2025</p>
+                <p class="edu-inst">
+                  University of the Pacific · San Francisco, USA
+                </p>
                 <p class="edu-desc">
-                  Python, R, SQL, Data Wrangling, Machine Learning, Statistics, NLP,
-                  Data Engineering, Data Visualization.
+                  Python, R, SQL, Data Wrangling, Machine Learning, NLP, Data
+                  Engineering, Statistics, Data Visualization.
                 </p>
               </div>
-            </div>
-          </div>
+              <span class="edu-pill">2023 – 2025</span>
+            </article>
 
-          <!-- Bachelors -->
-          <div class="col-md-6">
-            <div class="edu-card">
-              <img src="assets/logo/gitam.jpg"
-                   alt="GITAM University"
-                   class="edu-logo">
-              <div class="edu-body">
-                <h3>B.Tech in Computer Science &amp; Engineering</h3>
+            <article class="edu-card">
+              <div class="edu-main">
+                <h3>
+                  Bachelor of Technology in Computer Science and Engineering
+                </h3>
                 <p class="edu-inst">GITAM University · Visakhapatnam, India</p>
-                <p class="edu-year">2008 – 2012</p>
                 <p class="edu-desc">
-                  C, C++, Java, Data Structures, Web Technologies, AI, OS,
-                  Computer Networks, Software Engineering.
+                  C, C++, Java, Data Structures, Web Technologies, AI, Software
+                  Engineering, OS, Computer Networks.
                 </p>
               </div>
-            </div>
+              <span class="edu-pill">2008 – 2012</span>
+            </article>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- ================= EXPERIENCE ================= -->
+      <section id="experience" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Experience</h2>
+          </header>
 
-    <!-- ================= EXPERIENCE ================= -->
-    <section id="experience" class="section">
-      <div class="container section-card">
-        <div class="section-heading text-center">
-          <h2 class="section-title">Experience</h2>
-        </div>
-
-        <div class="exp-list">
-          <!-- Vitech -->
-          <article class="exp-card">
-            <div class="exp-logo">
-              <img src="assets/logo/vitech.jpg" alt="Vitech Systems Group">
-            </div>
-            <div class="exp-body">
-              <div class="exp-header">
-                <h3 class="exp-role">Data Quality Analyst</h3>
-                <span class="exp-date">2020 – 2023 · Hyderabad, India</span>
+          <div class="exp-list">
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/vitech.jpg" alt="Vitech Systems" />
               </div>
-              <h4 class="exp-company">Vitech Systems Pvt Limited</h4>
-              <p>
-                Automated data validation and model testing using Python and SQL,
-                built ETL workflows for pension and insurance clients, and improved
-                compliance monitoring and risk assessment frameworks.
-              </p>
-            </div>
-          </article>
-
-          <!-- Wipro -->
-          <article class="exp-card">
-            <div class="exp-logo">
-              <img src="assets/logo/wipro.jpg" alt="Wipro">
-            </div>
-            <div class="exp-body">
-              <div class="exp-header">
-                <h3 class="exp-role">Senior Analyst</h3>
-                <span class="exp-date">2018 – 2019 · Hyderabad, India</span>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Data Quality Analyst</h3>
+                  <span class="exp-badge">2020 – 2023 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Vitech Systems Pvt Limited</p>
+                <p class="exp-desc">
+                  Automated data validation and model testing using Python, SQL, and
+                  Postman, improving data accuracy and processing efficiency. Built
+                  predictive models for pension and insurance clients and designed ETL
+                  workflows for large-scale actuarial data.
+                </p>
               </div>
-              <h4 class="exp-company">Wipro Technologies Limited</h4>
-              <p>
-                Built interactive BI dashboards (Tableau, Power BI), automated
-                data pipelines, and led KPI analysis to unlock insights for
-                financial services stakeholders.
-              </p>
-            </div>
-          </article>
+            </article>
 
-          <!-- Accenture -->
-          <article class="exp-card">
-            <div class="exp-logo">
-              <img src="assets/logo/accenture.jpg" alt="Accenture">
-            </div>
-            <div class="exp-body">
-              <div class="exp-header">
-                <h3 class="exp-role">Data Associate</h3>
-                <span class="exp-date">2016 – 2017 · Hyderabad, India</span>
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/wipro.jpg" alt="Wipro" />
               </div>
-              <h4 class="exp-company">Accenture Solutions Limited</h4>
-              <p>
-                Developed customer segmentation models and fraud detection
-                workflows, optimized ETL pipelines, and improved transaction
-                analytics for global e-commerce clients.
-              </p>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Senior Data Analyst</h3>
+                  <span class="exp-badge">2018 – 2019 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Wipro Technologies Limited</p>
+                <p class="exp-desc">
+                  Performed EDA and built BI dashboards in Tableau and Power BI.
+                  Automated data pipelines with Python &amp; SQL, and led KPI and A/B
+                  testing initiatives to drive operational improvements.
+                </p>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/accenture.jpg" alt="Accenture" />
+              </div>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Data Associate</h3>
+                  <span class="exp-badge">2016 – 2017 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Accenture Solutions Limited</p>
+                <p class="exp-desc">
+                  Built customer segmentation models and real-time fraud detection
+                  workflows, improving marketing personalization and payment security
+                  for global clients.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROJECTS ================= -->
+      <section id="projects" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Projects</h2>
+          </header>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <img
+                src="assets/images/projects/mortgage.jpg"
+                alt="Mortgage Analysis"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Analysis of U.S. Consumer Mortgage Complaints</h3>
+                <p class="project-desc">
+                  Analyzed consumer complaint datasets to identify key trends in loan
+                  servicing and foreclosure issues.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Mortgage-Analysis"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/ecom-fraud.jpg"
+                alt="E-Commerce Fraud"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>E-Commerce Fraud Detection</h3>
+                <p class="project-desc">
+                  Real-time fraud detection pipeline leveraging streaming + ML for
+                  safer online transactions.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Apache Kafka, AWS, Python, Scikit-Learn
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/E-commerce-Fraud-Detection"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/nlpfn.jpg"
+                alt="Fake News Detection"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Fake News Detection</h3>
+                <p class="project-desc">
+                  NLP pipeline to classify news articles as fake or true using
+                  classical ML and transformer-based models.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, NLP, Scikit-Learn, BERT
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Fake-News-Analysis"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/heart-pred.jpg"
+                alt="Heart Disease Prediction"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Heart Disease Prediction</h3>
+                <p class="project-desc">
+                  Classification model for early heart-disease risk using clinical
+                  features and ML algorithms.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, Scikit-Learn, Logistic Regression
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Heart-Prediction"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SKILLS ================= -->
+      <section id="skills" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Skills</h2>
+          </header>
+
+          <div class="skills-grid">
+            <!-- Row 1 -->
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+              />
+              <span>Python</span>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java"
+              />
+              <span>Java</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+              />
+              <span>JavaScript</span>
+            </div>
 
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="section">
-      <div class="container section-card">
-        <div class="section-heading text-center">
-          <h2 class="section-title">Projects</h2>
-        </div>
+            <!-- Row 2 -->
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+              />
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL"
+              />
+              <span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+                alt="SQL"
+              />
+              <span>SQL</span>
+            </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="project-card">
-              <img src="assets/images/projects/mortgage.jpg"
-                   alt="Mortgage Analysis"
-                   class="project-image">
-              <h3>Analysis of U.S. Consumer Mortgage Complaints</h3>
-              <span class="project-type">Data Analysis</span>
-              <p>
-                Analyzed consumer complaint datasets to identify trends in loan
-                servicing, foreclosure issues, and regulatory patterns.
-              </p>
-              <p class="project-tech">
-                <strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn
-              </p>
-              <a href="https://github.com/GouthamiN25/Mortgage-Analysis"
-                 class="project-link"
-                 target="_blank">View Project</a>
+            <!-- Row 3 -->
+            <div class="skill-item">
+              <img
+                src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+                alt="Postman"
+              />
+              <span>Postman</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML"
+              />
+              <span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS"
+              />
+              <span>CSS</span>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                alt="FastAPI"
+              />
+              <span>FastAPI</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                alt="Docker"
+              />
+              <span>Docker</span>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="skill-item">
+              <img
+                src="https://img.icons8.com/color/40/000000/amazon-web-services.png"
+                alt="AWS"
+              />
+              <span>AWS</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git"
+              />
+              <span>Git</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg"
+                alt="Bash"
+              />
+              <span>Bash</span>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React"
+              />
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                alt="TensorFlow"
+              />
+              <span>TensorFlow</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg"
+                alt="Matplotlib"
+              />
+              <span>Matplotlib</span>
+            </div>
+
+            <!-- Row 7 -->
+            <div class="skill-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+                alt="Scikit-Learn"
+              />
+              <span>Scikit-Learn</span>
+            </div>
+            <div class="skill-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                alt="Power BI"
+              />
+              <span>Power BI</span>
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="project-card">
-              <img src="assets/images/projects/ecom-fraud.jpg"
-                   alt="E-Commerce Fraud Detection"
-                   class="project-image">
-              <h3>E-Commerce Fraud Detection</h3>
-              <span class="project-type">Data Engineering</span>
-              <p>
-                Built a real-time fraud detection pipeline using streaming data
-                and machine learning for high-risk transaction scoring.
-              </p>
-              <p class="project-tech">
-                <strong>Tech:</strong> Apache Kafka, AWS, Python, Scikit-Learn
-              </p>
-              <a href="https://github.com/GouthamiN25/E-commerce-Fraud-Detection"
-                 class="project-link"
-                 target="_blank">View Project</a>
-            </div>
-          </div>
         </div>
+      </section>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="project-card">
-              <img src="assets/images/projects/nlpfn.jpg"
-                   alt="Fake News Detection"
-                   class="project-image">
-              <h3>Fake News Detection</h3>
-              <span class="project-type">NLP</span>
-              <p>
-                Designed an NLP classification pipeline to label news articles
-                as Fake or True using modern embeddings and ML.
-              </p>
-              <p class="project-tech">
-                <strong>Tech:</strong> Python, NLP, Scikit-Learn, BERT
-              </p>
-              <a href="https://github.com/GouthamiN25/Fake-News-Analysis"
-                 class="project-link"
-                 target="_blank">View Project</a>
-            </div>
-          </div>
+      <!-- ================= CONTACT ================= -->
+      <section id="contact" class="section">
+        <div class="panel panel-cta">
+          <header class="panel-header text-center">
+            <h2>Get in Touch</h2>
+            <p class="panel-subtitle">
+              Open to full-time roles, internships, and collaborations on AI, data,
+              and product-focused projects.
+            </p>
+          </header>
 
-          <div class="col-md-6">
-            <div class="project-card">
-              <img src="assets/images/projects/heart-pred.jpg"
-                   alt="Heart Disease Prediction"
-                   class="project-image">
-              <h3>Heart Disease Prediction</h3>
-              <span class="project-type">Machine Learning</span>
-              <p>
-                Developed classification models to predict heart disease risk
-                from clinical variables for early intervention.
-              </p>
-              <p class="project-tech">
-                <strong>Tech:</strong> Python, Scikit-Learn, Logistic Regression
-              </p>
-              <a href="https://github.com/GouthamiN25/Heart-Prediction"
-                 class="project-link"
-                 target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="contact-grid">
+            <!-- Form -->
+            <div class="contact-form-wrapper">
+              <form id="contactForm">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="#" />
 
-    <!-- ================= SKILLS ================= -->
-    <section id="skills" class="section">
-      <div class="skills-container section-card">
-        <div class="section-heading text-center">
-          <h2 class="section-title">Skills</h2>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Row 1 -->
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <span>Python</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-            <span>Java</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-            <span>JavaScript</span>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-            <span>PostgreSQL</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-            <span>MySQL</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL">
-            <span>SQL</span>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="skill-item">
-            <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
-            <span>Postman</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <span>HTML</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <span>CSS</span>
-          </div>
-
-          <!-- Row 4 -->
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
-            <span>FastAPI</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-            <span>Docker</span>
-          </div>
-
-          <!-- Row 5 -->
-          <div class="skill-item">
-            <img src="https://img.icons8.com/color/40/000000/amazon-web-services.png" alt="AWS" />
-            <span>AWS</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-            <span>Git</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg" alt="Bash">
-            <span>Bash</span>
-          </div>
-
-          <!-- Row 6 -->
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <span>React</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
-            <span>TensorFlow</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib">
-            <span>Matplotlib</span>
-          </div>
-
-          <!-- Row 7 -->
-          <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-Learn">
-            <span>Scikit-Learn</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
-            <span>Power BI</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section">
-      <div class="container section-card">
-        <div class="section-heading text-center">
-          <h2 class="section-title">Get in Touch</h2>
-        </div>
-        <div class="contact-content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="single-contact-box">
-                <div class="contact-form">
-                  <form id="contactForm">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="#">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="name"
-                                 placeholder="Name*" name="name" required>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <input type="email" class="form-control" id="email"
-                                 placeholder="Email*" name="email" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="subject"
-                                 placeholder="Subject" name="subject">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <textarea class="form-control" rows="6" id="comment"
-                                    placeholder="Message" name="message" required></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button type="submit" class="contact-btn">Let’s Connect</button>
-                      </div>
-                    </div>
-                  </form>
-                  <div id="successMessage"
-                       style="display:none; color:green; font-weight:bold; margin-top:10px;">
-                    ✅ Message sent successfully!
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="name">Name*</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email*</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                    />
                   </div>
                 </div>
-              </div>
+
+                <div class="form-field">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="How can I help?"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="comment">Message*</label>
+                  <textarea
+                    id="comment"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Share a bit about your project, role, or idea."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary contact-btn">
+                  Let’s Connect
+                </button>
+
+                <p id="successMessage" class="success-message">
+                  ✅ Message sent successfully!
+                </p>
+              </form>
             </div>
 
-            <div class="col-md-6">
-              <div class="single-contact-box">
-                <div class="contact-adress">
-                  <div class="contact-add-head">
-                    <h3>Gouthami Nadupuri</h3>
-                    <p>Data Scientist</p>
-                  </div>
-                  <div class="contact-add-info">
-                    <p><strong>📞 Phone:</strong> +1 341-356-3732</p>
-                    <p><strong>📧 Email:</strong> gouthaminadupuri25@gmail.com</p>
-                    <p>
-                      <strong>🌐 Website:</strong>
-                      <a href="https://gouthaminadupuri.com" target="_blank">
-                        gouthaminadupuri.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div class="hm-foot-icon">
-                  <ul>
-                    <li>
-                      <a href="https://github.com/GouthamiN25" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                             alt="GitHub" width="20">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/"
-                         target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                             alt="LinkedIn" width="20">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://x.com/go250818" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
-                             alt="Twitter" width="20">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="mailto:gouthaminadupuri25@gmail.com"><i class="fa fa-envelope"></i></a>
-                    </li>
-                  </ul>
-                </div>
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <h3>Gouthami Nadupuri</h3>
+              <p class="contact-role">Data Scientist · AI &amp; ML Enthusiast</p>
+              <div class="contact-lines">
+                <p><strong>📞</strong> +1 341-356-3732</p>
+                <p><strong>📧</strong> gouthaminadupuri25@gmail.com</p>
+              </div>
+
+              <div class="contact-social">
+                <a href="https://github.com/GouthamiN25" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/go250818" target="_blank">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="mailto:gouthaminadupuri25@gmail.com">
+                  <i class="fa-regular fa-envelope"></i>
+                </a>
               </div>
             </div>
-
-          </div><!-- /.row -->
-        </div><!-- /.contact-content -->
-      </div>
-    </section>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer id="footer-copyright" class="footer-copyright">
-      <div class="container">
-        <div class="hm-footer-copyright text-center">
-          <p>&copy; Designed &amp; Built by Gouthami Nadupuri</p>
-        </div>
-      </div>
-
-      <div id="scroll-Top">
-        <div class="return-to-top">
-          <i class="fa fa-angle-up" id="scroll-top"></i>
-        </div>
-      </div>
+    <footer class="site-footer">
+      <p>© Designed &amp; Built by Gouthami Nadupuri</p>
     </footer>
 
-    <!-- Contact form JS -->
+    <!-- Contact Form Script -->
     <script>
-      document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const formData = new FormData(this);
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        fetch("https://formsubmit.co/gouthaminadupuri25@gmail.com", {
-          method: "POST",
-          body: formData
-        }).then(response => {
-          if (response.ok) {
-            document.getElementById("successMessage").style.display = "block";
-            document.getElementById("contactForm").reset();
-          } else {
-            alert("Error sending message. Please try again.");
-          }
-        }).catch(error => {
-          alert("Error: " + error);
+          const formData = new FormData(this);
+
+          fetch("https://formsubmit.co/gouthaminadupuri25@gmail.com", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                document.getElementById("successMessage").style.display = "block";
+                this.reset();
+              } else {
+                alert("Error sending message. Please try again.");
+              }
+            })
+            .catch((error) => {
+              alert("Error: " + error);
+            });
         });
-      });
     </script>
-
-    <!-- (Optional) Bootstrap / jQuery scripts if you use bootsnav collapse -->
-    <!--
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootsnav.js"></script>
-    -->
   </body>
 </html>
