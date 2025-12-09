@@ -25,10 +25,10 @@ body {
   background:
     radial-gradient(circle at 20% 30%, #ffe1eb 0%, #ffeaf3 45%, transparent 70%),
     radial-gradient(circle at 90% 10%, #ffffff 0%, #fff2f8 40%, transparent 70%),
-    radial-gradient(circle at 0% 100%, #ffc5d8 0%, #ffb2cc 40%, transparent 70%),
+    radial-gradient(circle at 0% 100%, #fcdce6 0%, #fad7e3 40%, transparent 70%),
     linear-gradient(180deg, #fff6fa 0%, #ffe6ef 40%, #ffcbdc 80%, #ffbfd8 100%);
 
-  color: #3a0712;
+  color: #8a1730;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -110,15 +110,15 @@ a {
   justify-content: center;
   padding: 7rem 1.5rem 4rem;
   text-align: center;
-  color: #ffffff;
+  color: #f9044d;
 }
 
 .hero-inner {
-  max-width: 780px;
+  max-width: 440px;
 }
 
 .hero-eyebrow {
-  font-size: 0.95rem;
+  font-size: 0.55rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -128,7 +128,7 @@ a {
 
 .hero-title {
   font-size: clamp(3.4rem, 7vw, 5rem);
-  font-weight: 700;
+  font-weight: 500;
   margin: 0 0 0.7rem;
   letter-spacing: -0.02em;
 }
@@ -649,3 +649,4 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
