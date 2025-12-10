@@ -15,6 +15,14 @@ body {
 }
 
 /* ===========================
+   THEME VARIABLES
+=========================== */
+:root {
+  /* Same gradient for all hero buttons */
+  --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
+}
+
+/* ===========================
    BASE / BODY
 =========================== */
 body {
@@ -127,14 +135,14 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(3.4rem, 7vw, 5rem);
+  font-size: clamp(3.6rem, 8vw, 5.4rem);
   font-weight: 700;
   margin: 0 0 0.7rem;
   letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   opacity: 0.95;
   margin-bottom: 2.1rem;
 }
@@ -168,25 +176,25 @@ a {
   cursor: pointer;
 }
 
+/* View My Work – PRIMARY gradient button */
 .btn-primary {
-  background: #ffffff;
-  color: #d82447;
-  border-color: #ffffff;
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
-}
-
-.btn-primary:hover {
-  background: #ffe3eb;
-}
-
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--btn-gradient);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 36px rgba(249, 4, 77, 0.35);
 }
 
+/* Contact Me + Resume – SAME gradient */
+.btn-ghost {
+  background: var(--btn-gradient);
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(249, 4, 77, 0.35);
+}
+
+/* Shared hover for all hero buttons */
+.btn-primary:hover,
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+  box-shadow: 0 22px 44px rgba(249, 4, 77, 0.45);
 }
 
 /* ===========================
@@ -533,8 +541,27 @@ a {
   box-shadow: 0 0 0 2px rgba(249, 4, 77, 0.18);
 }
 
+/* contact form submit button – reuse hero gradient */
 .contact-btn {
   margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.96rem;
+  font-weight: 600;
+  background: var(--btn-gradient);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(249, 4, 77, 0.35);
+  transition: 0.2s ease-out;
+}
+
+.contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(249, 4, 77, 0.45);
 }
 
 .success-message {
@@ -649,5 +676,3 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
-
