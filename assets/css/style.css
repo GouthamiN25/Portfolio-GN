@@ -540,24 +540,48 @@ a {
 }
 
 /* ===========================
-   SKILLS (keep your existing)
+   SKILLS
 =========================== */
 .skills-grid {
-  margin-top: 2.2rem;
+  margin-top: 2.4rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.4rem;
 }
 
+.skill-item {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem 0.8rem;
+  width: 110px;
+  text-align: center;
+  box-shadow: 0 12px 26px rgba(255, 80, 120, 0.16);
+  border: 1px solid rgba(249, 4, 77, 0.08);
+}
+
+.skill-item img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.skill-item span {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: #7b3042;
+}
+
+
 /* ===========================
-   CONTACT (keep your existing)
+   CONTACT
 =========================== */
 .contact-grid {
-  margin-top: 2.2rem;
+  margin-top: 2.4rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 2.2rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.4rem;
   align-items: flex-start;
 }
 
@@ -565,8 +589,8 @@ a {
   background: #ffffff;
   border-radius: 18px;
   padding: 1.8rem 1.9rem;
-  box-shadow: 0 12px 30px rgba(255, 80, 120, 0.12);
-  border: var(--border);
+  box-shadow: 0 12px 30px rgba(255, 80, 120, 0.16);
+  border: 1px solid rgba(249, 4, 77, 0.08);
 }
 
 .form-row {
@@ -583,30 +607,49 @@ a {
   display: block;
   font-size: 0.8rem;
   margin-bottom: 0.35rem;
-  font-weight: 600;
-  color: var(--text);
+  font-weight: 500;
+  color: #7b3042;
 }
 
 .form-field input,
 .form-field textarea {
   width: 100%;
-  padding: 0.7rem 0.85rem;
-  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   resize: vertical;
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: rgba(249, 4, 77, 0.35);
-  box-shadow: 0 0 0 3px rgba(249, 4, 77, 0.14);
+  border-color: #f29;
+  box-shadow: 0 0 0 2px rgba(249, 4, 77, 0.18);
 }
 
+/* contact form submit button – reuse hero gradient */
 .contact-btn {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.96rem;
+  font-weight: 600;
+  background: var(--btn-gradient);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(249, 4, 77, 0.35);
+  transition: 0.2s ease-out;
+}
+
+.contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(249, 4, 77, 0.45);
 }
 
 .success-message {
@@ -616,15 +659,55 @@ a {
   color: #178f35;
 }
 
+/* Contact info block */
+.contact-info {
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #d82447;
+}
+
+.contact-role {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.contact-lines p {
+  margin: 0.3rem 0;
+}
+
+.contact-social {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f9044d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.95rem;
+  box-shadow: 0 14px 28px rgba(249, 4, 77, 0.4);
+}
+
 /* ===========================
    FOOTER
 =========================== */
 .site-footer {
   text-align: center;
   padding: 1.75rem 1rem 2.2rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   opacity: 0.85;
-  color: var(--text);
+  color: #7b3042;
 }
 
 /* ===========================
@@ -681,3 +764,4 @@ a {
     padding-top: 6.5rem;
   }
 }
+
