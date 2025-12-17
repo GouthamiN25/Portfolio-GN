@@ -15,6 +15,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -28,19 +29,14 @@
     <header class="site-header">
       <div class="nav-container">
         <div class="nav-brand">GN</div>
-
-        <button class="nav-toggle" aria-label="Open menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <nav class="nav-links" id="navLinks">
+        <nav class="nav-links">
           <a href="#welcome-hero">Home</a>
           <a href="#about">About</a>
           <a href="#education">Education</a>
-          <a href="#courses">Courses</a>
-          <a href="#volunteer">Volunteer</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#courses">Courses</a>
+          <a href="#volunteer">Volunteer</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -59,11 +55,11 @@
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
             <a
               href="assets/download/Resume-GouthamiN-AI.pdf"
               target="_blank"
-              class="btn btn-primary"
+              class="btn btn-ghost"
               >Resume</a
             >
           </div>
@@ -86,25 +82,18 @@
           <div class="about-grid">
             <div class="about-main">
               <p>
-                I am a Data Scientist and ML Engineer with experience building production-oriented
-                data pipelines, machine learning systems, and AI-powered applications. My work spans
-                predictive modeling, large-scale data processing, NLP/LLMs, and applied ML, with a strong
-                emphasis on system reliability, data quality, and real-world impact.
+                I am a Data Scientist and ML Engineer with experience building production-oriented data pipelines, machine learning systems, and AI-powered applications. My work spans predictive modeling, large-scale data processing, NLP/LLMs, and applied ML, with a strong emphasis on system reliability, data quality, and real-world impact.
               </p>
               <p>
-                I have designed and implemented end-to-end solutions including ETL workflows, streaming fraud
-                detection systems, retrieval-augmented generation (RAG) pipelines, reinforcement learning environments,
-                and time-series forecasting models. I work primarily with Python and SQL, and I have hands-on experience
-                with tools such as Spark, Kafka, scikit-learn, TensorFlow/PyTorch, FastAPI, and cloud platforms.
+                I have designed and implemented end-to-end solutions including ETL workflows, streaming fraud detection systems, retrieval-augmented generation (RAG) pipelines, reinforcement learning environments, and time-series forecasting models. I work primarily with Python and SQL, and I have hands-on experience with frameworks and tools such as Spark, Kafka, scikit-learn, TensorFlow/PyTorch, FastAPI, and cloud platforms.
               </p>
               <p>
-                Beyond modeling, I focus on building robust, maintainable systems—writing clean, modular code, validating
-                data/model outputs, and ensuring solutions scale from experimentation to production. I also use data visualization
-                and analytical storytelling to communicate insights clearly to both technical and non-technical stakeholders.
+                Beyond modeling, I focus on building robust, maintainable systems—writing clean, modular code, validating data and model outputs, and ensuring solutions scale from experimentation to production. I also use data visualization and analytical storytelling to clearly communicate insights and tradeoffs to both technical and non-technical stakeholders. 
+                I am motivated by solving complex problems at the intersection of data, machine learning, and engineering, and I enjoy building systems that translate advanced analytics and AI into practical, high-impact products.
               </p>
 
               <div class="social-links">
-                <a href="https://github.com/GouthamiN25" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/GouthamiN25" target="_blank">
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                     alt="GitHub"
@@ -114,7 +103,6 @@
                 <a
                   href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/"
                   target="_blank"
-                  aria-label="LinkedIn"
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
@@ -122,15 +110,15 @@
                     width="26"
                   />
                 </a>
-                <a href="https://twitter.com/go250818" target="_blank" aria-label="Twitter">
+                <a href="https://twitter.com/go250818" target="_blank">
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
                     alt="Twitter"
                     width="26"
                   />
                 </a>
-                <a href="mailto:gouthaminadupuri25@gmail.com" aria-label="Email">
-                  <i class="fa-regular fa-envelope"></i>
+                <a href="mailto:gouthaminadupuri25@gmail.com">
+                  <i class="fa fa-envelope"></i>
                 </a>
               </div>
             </div>
@@ -157,10 +145,12 @@
             <article class="edu-card">
               <div class="edu-main">
                 <h3>Master of Science in Data Science</h3>
-                <p class="edu-inst">University of the Pacific · San Francisco, USA</p>
+                <p class="edu-inst">
+                  University of the Pacific · San Francisco, USA
+                </p>
                 <p class="edu-desc">
-                  Python, R, SQL, Data Wrangling, Machine Learning, NLP, Data Engineering,
-                  Statistics, Data Visualization.
+                  Python, R, SQL, Data Wrangling, Machine Learning, NLP, Data
+                  Engineering, Statistics, Data Visualization.
                 </p>
               </div>
               <span class="edu-pill">2023 – 2025</span>
@@ -168,11 +158,13 @@
 
             <article class="edu-card">
               <div class="edu-main">
-                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                <h3>
+                  Bachelor of Technology in Computer Science and Engineering
+                </h3>
                 <p class="edu-inst">GITAM University · Visakhapatnam, India</p>
                 <p class="edu-desc">
-                  C, C++, Java, Data Structures, Web Technologies, AI, Software Engineering,
-                  Operating Systems, Computer Networks.
+                  C, C++, Java, Data Structures, Web Technologies, Artificial Intelligence, Software
+                  Engineering, Operating Systems, Computer Networks.
                 </p>
               </div>
               <span class="edu-pill">2008 – 2012</span>
@@ -181,7 +173,290 @@
         </div>
       </section>
 
-      <!-- ================= COURSES ================= -->
+      <!-- ================= EXPERIENCE ================= -->
+      <section id="experience" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Experience</h2>
+          </header>
+
+          <div class="exp-list">
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/vitech.jpg" alt="Vitech Systems" />
+              </div>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Data Quality Analyst</h3>
+                  <span class="exp-badge">2020 – 2023 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Vitech Systems Pvt Limited</p>
+                <p class="exp-desc">
+                  Automated data validation and model testing using Python, SQL, and
+                  Postman, improving data accuracy and processing efficiency. Built
+                  predictive models for pension and insurance clients and designed ETL
+                  workflows for large-scale actuarial data.
+                </p>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/wipro.jpg" alt="Wipro" />
+              </div>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Senior Analyst</h3>
+                  <span class="exp-badge">2018 – 2019 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Wipro Technologies Limited</p>
+                <p class="exp-desc">
+                  Performed EDA and built BI dashboards in Tableau and Power BI.
+                  Automated data pipelines with Python &amp; SQL, and led KPI and A/B
+                  testing initiatives to drive operational improvements.
+                </p>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-logo">
+                <img src="assets/logo/accenture.jpg" alt="Accenture" />
+              </div>
+              <div class="exp-body">
+                <header class="exp-header">
+                  <h3 class="exp-role">Data Associate</h3>
+                  <span class="exp-badge">2016 – 2017 · Hyderabad, India</span>
+                </header>
+                <p class="exp-company">Accenture Solutions Limited</p>
+                <p class="exp-desc">
+                  Built customer segmentation models and real-time fraud detection
+                  workflows, improving marketing personalization and payment security
+                  for global clients.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROJECTS ================= -->
+      <section id="projects" class="section">
+        <div class="panel">
+          <header class="panel-header text-center">
+            <h2>Projects</h2>
+          </header>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <img
+                src="assets/images/projects/tim.jpg"
+                alt="Time Series"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Time Series Forecasting</h3>
+                <p class="project-desc">
+                  This project implements an end-to-end sales time series forecasting system using a range of modeling approaches, including classical time series methods (ARIMA, SARIMA), machine learning models (Random Forest, XGBoost), and a deep learning–based LSTM sequence model to capture complex temporal patterns and improve forecast accuracy.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> ARIMA, SARIMA, Python, TensorFlow, Keras, Streamlit
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Time-Series-Forecasting"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+  <img
+    src="assets/images/projects/cyber.jpg"
+    alt="CyberAI Sentinel – ML + RAG Cyber Analytics"
+    class="project-image"
+  />
+  <div class="project-body">
+    <h3>CyberAI Sentinel – ML + RAG Cyber Analytics</h3>
+    <p class="project-desc">
+      An end-to-end cyber security analytics pipeline that combines traditional
+      machine learning with a Retrieval-Augmented Generation (RAG) workflow to
+      analyze security logs, classify threats, and generate analyst-ready
+      explanations. 
+    </p>
+    <p class="project-tech">
+      <strong>Tech:</strong> Python, Machine Learning, RAG, Vector Database,
+      LLMs, Streamlit/FastAPI
+    </p>
+    <a
+      href="https://github.com/GouthamiN25/CyberAI-Sentinel-ML-RAG-Pipeline"
+      class="project-link"
+      target="_blank"
+    >
+      View Project
+    </a>
+  </div>
+</article>
+
+            <article class="project-card">
+  <img
+    src="assets/images/projects/stocks.jpg"
+    alt="Stock Market LLM Assistant – GPT-2 Insights"
+    class="project-image"
+  />
+  <div class="project-body">
+    <h3>Stock Market LLM Assistant</h3>
+    <p class="project-desc">
+      An experimentation project that applies GPT-2 and transformers on stock
+      market–related text to generate insights and summaries. Combines
+      traditional data analysis with generative modeling to explore how LLMs
+      can assist with financial understanding and reporting.
+    </p>
+    <p class="project-tech">
+      <strong>Tech:</strong> Python, Transformers (GPT-2), Pandas, Matplotlib,
+      Seaborn, Text Generation, FPDF/Reporting
+    </p>
+    <a
+      href="https://github.com/GouthamiN25/Stock-Market-LLM"
+      class="project-link"
+      target="_blank"
+    >
+      View Project
+    </a>
+  </div>
+</article>
+
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/mortgage.jpg"
+                alt="Mortgage Analysis"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Analysis of U.S. Consumer Mortgage Complaints</h3>
+                <p class="project-desc">
+                  Analyzed consumer complaint datasets to identify key trends in loan
+                  servicing and foreclosure issues.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Mortgage-Analysis"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/ecom-fraud.jpg"
+                alt="E-Commerce Fraud"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>E-Commerce Fraud Detection</h3>
+                <p class="project-desc">
+                  Real-time fraud detection pipeline leveraging streaming + ML for
+                  safer online transactions.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Apache Kafka, AWS, Python, Scikit-Learn
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/E-commerce-Fraud-Detection"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/nlpfn.jpg"
+                alt="Fake News Detection"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Fake News Detection</h3>
+                <p class="project-desc">
+                  NLP pipeline to classify news articles as fake or true using
+                  classical ML and transformer-based models.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, NLP, Scikit-Learn, BERT
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Fake-News-Analysis"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+  <img
+    src="assets/images/projects/cart-pole.jpg"
+    alt="Deep Q-Learning Agent for CartPole – Reinforcement Learning"
+    class="project-image"
+  />
+  <div class="project-body">
+    <h3>Deep Q-Learning Agent – CartPole Reinforcement Learning</h3>
+    <p class="project-desc">
+      A reinforcement learning agent built using Deep Q-Learning (DQN) to solve the 
+      classic CartPole control problem. The project implements experience replay, 
+      epsilon–greedy exploration, neural network–based Q-value estimation, and a 
+      target network for stable training. The agent learns to balance the pole by 
+      maximizing long-term reward through trial-and-error interaction with the 
+      environment.
+    </p>
+    <p class="project-tech">
+      <strong>Tech:</strong> Python, Reinforcement Learning, Deep Q-Learning, 
+      Neural Networks, Gymnasium/OpenAI Gym, NumPy, Matplotlib
+    </p>
+    <a
+      href="https://github.com/GouthamiN25/Deep-Q-Learning-Agent-for-CartPole"
+      class="project-link"
+      target="_blank"
+    >
+      View Project
+    </a>
+  </div>
+</article>
+
+            <article class="project-card">
+              <img
+                src="assets/images/projects/heart-pred.jpg"
+                alt="Heart Disease Prediction"
+                class="project-image"
+              />
+              <div class="project-body">
+                <h3>Heart Disease Prediction</h3>
+                <p class="project-desc">
+                  Classification model for early heart-disease risk using clinical
+                  features and ML algorithms.
+                </p>
+                <p class="project-tech">
+                  <strong>Tech:</strong> Python, Scikit-Learn, Logistic Regression
+                </p>
+                <a
+                  href="https://github.com/GouthamiN25/Heart-Prediction"
+                  class="project-link"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- ================= COURSES ================= -->
       <section id="courses" class="section">
         <div class="panel">
           <header class="panel-header text-center">
@@ -271,215 +546,6 @@
           </div>
         </div>
       </section>
-
-      <!-- ================= EXPERIENCE ================= -->
-      <section id="experience" class="section">
-        <div class="panel">
-          <header class="panel-header text-center">
-            <h2>Experience</h2>
-          </header>
-
-          <div class="exp-list">
-            <article class="exp-card">
-              <div class="exp-logo">
-                <img src="assets/logo/vitech.jpg" alt="Vitech Systems" />
-              </div>
-              <div class="exp-body">
-                <header class="exp-header">
-                  <h3 class="exp-role">Data Quality Analyst</h3>
-                  <span class="exp-badge">2020 – 2023 · Hyderabad, India</span>
-                </header>
-                <p class="exp-company">Vitech Systems Pvt Limited</p>
-                <p class="exp-desc">
-                  Automated data validation and model testing using Python, SQL, and Postman, improving data accuracy and efficiency.
-                  Built predictive models and designed ETL workflows for large-scale actuarial data.
-                </p>
-              </div>
-            </article>
-
-            <article class="exp-card">
-              <div class="exp-logo">
-                <img src="assets/logo/wipro.jpg" alt="Wipro" />
-              </div>
-              <div class="exp-body">
-                <header class="exp-header">
-                  <h3 class="exp-role">Senior Analyst</h3>
-                  <span class="exp-badge">2018 – 2019 · Hyderabad, India</span>
-                </header>
-                <p class="exp-company">Wipro Technologies Limited</p>
-                <p class="exp-desc">
-                  Performed EDA and built BI dashboards in Tableau and Power BI. Automated data pipelines with Python &amp; SQL,
-                  and drove KPI and A/B testing initiatives.
-                </p>
-              </div>
-            </article>
-
-            <article class="exp-card">
-              <div class="exp-logo">
-                <img src="assets/logo/accenture.jpg" alt="Accenture" />
-              </div>
-              <div class="exp-body">
-                <header class="exp-header">
-                  <h3 class="exp-role">Data Associate</h3>
-                  <span class="exp-badge">2016 – 2017 · Hyderabad, India</span>
-                </header>
-                <p class="exp-company">Accenture Solutions Limited</p>
-                <p class="exp-desc">
-                  Built customer segmentation models and real-time fraud detection workflows, improving marketing personalization
-                  and payment security for global clients.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PROJECTS ================= -->
-      <section id="projects" class="section">
-        <div class="panel">
-          <header class="panel-header text-center">
-            <h2>Projects</h2>
-            <p class="panel-subtitle">
-              A curated set of end-to-end projects across ML, RAG/LLMs, data engineering, and RL.
-            </p>
-          </header>
-
-          <div class="projects-grid">
-            <article class="project-card">
-              <img src="assets/images/projects/tim.jpg" alt="Time Series Forecasting" class="project-image" />
-              <div class="project-body">
-                <h3>Time Series Forecasting</h3>
-                <p class="project-desc">
-                  End-to-end sales forecasting using ARIMA/SARIMA, ML models (Random Forest, XGBoost),
-                  and LSTM to capture complex temporal patterns and improve forecast accuracy.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> ARIMA, SARIMA, Python, TensorFlow, Keras, Streamlit
-                </p>
-                <a href="https://github.com/GouthamiN25/Time-Series-Forecasting" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/cyber.jpg" alt="CyberAI Sentinel – ML + RAG Cyber Analytics" class="project-image" />
-              <div class="project-body">
-                <h3>CyberAI Sentinel – ML + RAG Cyber Analytics</h3>
-                <p class="project-desc">
-                  Cyber security analytics pipeline combining machine learning with Retrieval-Augmented Generation (RAG)
-                  to analyze security logs, classify threats, and produce analyst-ready explanations.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, Machine Learning, RAG, Vector Database, LLMs, Streamlit/FastAPI
-                </p>
-                <a href="https://github.com/GouthamiN25/CyberAI-Sentinel-ML-RAG-Pipeline" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/cart-pole.jpg" alt="Deep Q-Learning Agent – CartPole Reinforcement Learning" class="project-image" />
-              <div class="project-body">
-                <h3>Deep Q-Learning Agent – CartPole Reinforcement Learning</h3>
-                <p class="project-desc">
-                  Deep Q-Network (DQN) agent to solve CartPole using experience replay, epsilon-greedy exploration,
-                  neural Q-value estimation, and a target network for stable training.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, Reinforcement Learning, DQN, Gymnasium/OpenAI Gym, NumPy, Matplotlib
-                </p>
-                <a href="https://github.com/GouthamiN25/Deep-Q-Learning-Agent-for-CartPole" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/ecom-fraud.jpg" alt="E-Commerce Fraud Detection" class="project-image" />
-              <div class="project-body">
-                <h3>E-Commerce Fraud Detection</h3>
-                <p class="project-desc">
-                  Real-time fraud detection pipeline leveraging streaming + ML for safer online transactions.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Apache Kafka, AWS, Python, Scikit-Learn
-                </p>
-                <a href="https://github.com/GouthamiN25/E-commerce-Fraud-Detection" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/nlpfn.jpg" alt="Fake News Detection" class="project-image" />
-              <div class="project-body">
-                <h3>Fake News Detection</h3>
-                <p class="project-desc">
-                  NLP pipeline to classify news articles as fake or true using classical ML and transformer-based models.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, NLP, Scikit-Learn, BERT
-                </p>
-                <a href="https://github.com/GouthamiN25/Fake-News-Analysis" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/mortgage.jpg" alt="Mortgage Analysis" class="project-image" />
-              <div class="project-body">
-                <h3>Analysis of U.S. Consumer Mortgage Complaints</h3>
-                <p class="project-desc">
-                  Analyzed consumer complaint datasets to identify trends in loan servicing and foreclosure issues.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn
-                </p>
-                <a href="https://github.com/GouthamiN25/Mortgage-Analysis" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/stocks.jpg" alt="Stock Market LLM Assistant" class="project-image" />
-              <div class="project-body">
-                <h3>Stock Market LLM Assistant</h3>
-                <p class="project-desc">
-                  Experimented with GPT-2 transformers on stock-market text to generate summaries and insights,
-                  combining analysis with generative modeling.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, Transformers (GPT-2), Pandas, Matplotlib, Text Generation
-                </p>
-                <a href="https://github.com/GouthamiN25/Stock-Market-LLM" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/images/projects/heart-pred.jpg" alt="Heart Disease Prediction" class="project-image" />
-              <div class="project-body">
-                <h3>Heart Disease Prediction</h3>
-                <p class="project-desc">
-                  Classification model for early heart-disease risk using clinical features and ML algorithms.
-                </p>
-                <p class="project-tech">
-                  <strong>Tech:</strong> Python, Scikit-Learn, Logistic Regression
-                </p>
-                <a href="https://github.com/GouthamiN25/Heart-Prediction" class="project-link" target="_blank">
-                  View Project
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <!-- ================= SKILLS ================= -->
       <section id="skills" class="section">
         <div class="panel">
@@ -644,11 +710,13 @@
           <header class="panel-header text-center">
             <h2>Get in Touch</h2>
             <p class="panel-subtitle">
-              Open to full-time roles, internships, and collaborations on AI, data, and product-focused projects.
+              Open to full-time roles, internships, and collaborations on AI, data,
+              and product-focused projects.
             </p>
           </header>
 
           <div class="contact-grid">
+            <!-- Form -->
             <div class="contact-form-wrapper">
               <form id="contactForm">
                 <input type="hidden" name="_captcha" value="false" />
@@ -657,30 +725,58 @@
                 <div class="form-row">
                   <div class="form-field">
                     <label for="name">Name*</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name" />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                    />
                   </div>
                   <div class="form-field">
                     <label for="email">Email*</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                    />
                   </div>
                 </div>
 
                 <div class="form-field">
                   <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" placeholder="How can I help?" />
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="How can I help?"
+                  />
                 </div>
 
                 <div class="form-field">
                   <label for="comment">Message*</label>
-                  <textarea id="comment" name="message" rows="5" required placeholder="Share a bit about your project, role, or idea."></textarea>
+                  <textarea
+                    id="comment"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Share a bit about your project, role, or idea."
+                  ></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary contact-btn">Let’s Connect</button>
+                <button type="submit" class="btn btn-primary contact-btn">
+                  Let’s Connect
+                </button>
 
-                <p id="successMessage" class="success-message">✅ Message sent successfully!</p>
+                <p id="successMessage" class="success-message">
+                  ✅ Message sent successfully!
+                </p>
               </form>
             </div>
 
+            <!-- Contact Info -->
             <div class="contact-info">
               <h3>Gouthami Nadupuri</h3>
               <p class="contact-role">Data Scientist · AI &amp; ML Enthusiast</p>
@@ -689,18 +785,21 @@
                 <p><strong>📧</strong> gouthaminadupuri25@gmail.com</p>
                 <p><strong><i class="fa fa-globe"></i></strong> CurioGalaxy.com</p>
               </div>
-
+              
               <div class="contact-social">
-                <a href="https://github.com/GouthamiN25" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/GouthamiN25" target="_blank">
                   <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/" target="_blank" aria-label="LinkedIn">
+                <a
+                  href="https://www.linkedin.com/in/gouthami-nadupuri-14726455/"
+                  target="_blank"
+                >
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="https://twitter.com/go250818" target="_blank" aria-label="Twitter">
+                <a href="https://twitter.com/go250818" target="_blank">
                   <i class="fa-brands fa-x-twitter"></i>
                 </a>
-                <a href="mailto:gouthaminadupuri25@gmail.com" aria-label="Email">
+                <a href="mailto:gouthaminadupuri25@gmail.com">
                   <i class="fa-regular fa-envelope"></i>
                 </a>
               </div>
@@ -710,36 +809,36 @@
       </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
       <p>© Designed &amp; Built by Gouthami Nadupuri</p>
     </footer>
 
+    <!-- Contact Form Script -->
     <script>
-      // Mobile nav toggle
-      const btn = document.querySelector(".nav-toggle");
-      const nav = document.getElementById("navLinks");
-      btn.addEventListener("click", () => nav.classList.toggle("open"));
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-      // Contact form
-      document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const formData = new FormData(this);
+          const formData = new FormData(this);
 
-        fetch("https://formsubmit.co/gouthaminadupuri25@gmail.com", {
-          method: "POST",
-          body: formData,
-        })
-          .then((response) => {
-            if (response.ok) {
-              document.getElementById("successMessage").style.display = "block";
-              this.reset();
-            } else {
-              alert("Error sending message. Please try again.");
-            }
+          fetch("https://formsubmit.co/gouthaminadupuri25@gmail.com", {
+            method: "POST",
+            body: formData,
           })
-          .catch((error) => alert("Error: " + error));
-      });
+            .then((response) => {
+              if (response.ok) {
+                document.getElementById("successMessage").style.display = "block";
+                this.reset();
+              } else {
+                alert("Error sending message. Please try again.");
+              }
+            })
+            .catch((error) => {
+              alert("Error: " + error);
+            });
+        });
     </script>
   </body>
 </html>
-
