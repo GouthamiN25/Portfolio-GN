@@ -453,6 +453,70 @@ a {
 }
 
 /* ===========================
+   COURSES
+=========================== */
+.courses-grid {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem;
+  border: var(--border);
+  box-shadow: 0 12px 30px rgba(255, 80, 120, 0.12);
+}
+
+.course-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: #5c1224;
+  line-height: 1.35;
+}
+
+.course-meta {
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+
+/* ===========================
+   VOLUNTEER
+=========================== */
+.volunteer-list {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.volunteer-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem;
+  border: var(--border);
+  box-shadow: 0 12px 30px rgba(255, 80, 120, 0.12);
+}
+
+.volunteer-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: #5c1224;
+}
+
+.volunteer-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* ===========================
    SKILLS
 =========================== */
 .skills-grid {
@@ -676,3 +740,4 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
