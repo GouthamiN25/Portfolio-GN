@@ -20,12 +20,6 @@ body {
 :root {
   /* Same gradient for all hero buttons */
   --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
-
-  /* used by course/volunteer cards */
-  --border: 1px solid rgba(249, 4, 77, 0.10);
-
-  /* sparkle tuning */
-  --sparkle-opacity: 0.95;
 }
 
 /* ===========================
@@ -35,79 +29,26 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 
-  /* Soft hero-like pink gradient (keep same) */
+  /* Rich luxury red-pink background */
   background:
-    radial-gradient(circle at 20% 30%, #ffe1eb 0%, #ffeaf3 45%, transparent 70%),
-    radial-gradient(circle at 90% 10%, #ffffff 0%, #fff2f8 40%, transparent 70%),
-    radial-gradient(circle at 0% 100%, #fcdce6 0%, #fad7e3 40%, transparent 70%),
-    linear-gradient(180deg, #fff6fa 0%, #ffe6ef 40%, #ffcbdc 80%, #ffbfd8 100%);
+    radial-gradient(circle at 20% 20%, rgba(255, 80, 130, 0.45), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(255, 40, 100, 0.35), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(255, 20, 90, 0.45), transparent 50%),
+    linear-gradient(
+      180deg,
+      #fff0f6 0%,
+      #ffd6e6 30%,
+      #ffb3d1 55%,
+      #ff8fb8 75%,
+      #ff6fa6 100%
+    );
 
   color: #8a1730;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  /* needed for sparkle overlay */
   position: relative;
   overflow-x: hidden;
-}
-
-/* ===========================
-   SPARKLES OVERLAY (NEW)
-   - subtle twinkling particles
-   - doesn't affect layout/clicks
-=========================== */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: var(--sparkle-opacity);
-}
-
-/* Layer 1: tiny sparkles spread out */
-body::before {
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.85) 0 1px, transparent 2px) 0 0 / 220px 220px,
-    radial-gradient(circle, rgba(255,255,255,0.75) 0 1px, transparent 2px) 80px 40px / 260px 260px,
-    radial-gradient(circle, rgba(255,255,255,0.65) 0 1px, transparent 2px) 30px 120px / 300px 300px;
-  filter: blur(0.2px);
-  animation: sparkle-drift 18s linear infinite;
-}
-
-/* Layer 2: “twinkle” highlights */
-body::after {
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.95) 0 1.2px, transparent 3px) 0 0 / 340px 340px,
-    radial-gradient(circle, rgba(255,255,255,0.75) 0 1.4px, transparent 3px) 120px 80px / 420px 420px;
-  mix-blend-mode: screen;
-  animation: sparkle-drift 28s linear infinite, sparkle-twinkle 4.5s ease-in-out infinite;
-}
-
-/* Keep your content above sparkles */
-.site-header,
-main,
-.site-footer {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes sparkle-drift {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-40px, 60px, 0); }
-}
-
-@keyframes sparkle-twinkle {
-  0%, 100% { opacity: calc(var(--sparkle-opacity) * 0.85); }
-  50%      { opacity: calc(var(--sparkle-opacity) * 1.15); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
-    animation: none !important;
-  }
 }
 
 a {
@@ -117,6 +58,56 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+/* ===========================
+   SPARKLES (VISIBLE + SHINY)
+=========================== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sparkle dots */
+body::before {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,180,210,0.9) 1.5px, transparent 3px);
+  background-size: 120px 120px, 180px 180px, 240px 240px;
+  background-position: 0 0, 60px 40px, 120px 80px;
+  animation: sparkleFloat 22s linear infinite;
+  opacity: 0.9;
+}
+
+/* Shiny glow overlay */
+body::after {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 45%);
+  animation: shinePulse 6s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-80px); }
+}
+
+@keyframes shinePulse {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.6; }
+}
+
+/* Keep content above sparkles */
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===========================
@@ -188,6 +179,7 @@ a {
   padding: 7.25rem 1.5rem 4rem;
   text-align: center;
   color: #f9044d;
+  position: relative;
 }
 
 .hero-inner {
@@ -536,8 +528,8 @@ a {
   background: #ffffff;
   border-radius: 18px;
   padding: 1.2rem 1.25rem;
-  border: var(--border);
   box-shadow: 0 12px 30px rgba(255, 80, 120, 0.12);
+  border: 1px solid rgba(249, 4, 77, 0.08);
 }
 
 .course-card h3 {
@@ -568,8 +560,8 @@ a {
   background: #ffffff;
   border-radius: 18px;
   padding: 1.4rem 1.5rem;
-  border: var(--border);
   box-shadow: 0 12px 30px rgba(255, 80, 120, 0.12);
+  border: 1px solid rgba(249, 4, 77, 0.08);
 }
 
 .volunteer-card h3 {
@@ -809,4 +801,3 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
