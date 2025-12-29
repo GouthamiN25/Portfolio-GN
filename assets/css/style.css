@@ -228,7 +228,7 @@ main,
   position: absolute;
   inset: 0;
 
-  background-image: url("/GouthamiNadupuri/assets/images/about/hero-office.jpg");
+  background-image: url("/assets/images/about/hero-office.jpg");
   background-repeat: no-repeat;
   background-position: center 35%;
   background-size: cover;
@@ -351,7 +351,7 @@ main,
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/GouthamiNadupuri/assets/images/about/golden-gate.png");
+  background-image: url("/assets/images/about/golden-gate.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -431,8 +431,8 @@ main,
   inset: 0;
 
   background-image:
-    url("/GouthamiNadupuri/assets/images/about/edu-cube.png"),
-    url("/GouthamiNadupuri/assets/images/about/edu-ai.png");
+    url("/assets/images/about/edu-cube.png"),
+    url("/assets/images/about/edu-ai.png");
 
   background-repeat: no-repeat, no-repeat;
   background-position: left 10% top 20%, right 10% bottom 15%;
@@ -929,3 +929,4 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
