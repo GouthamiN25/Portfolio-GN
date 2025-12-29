@@ -837,4 +837,72 @@ main,
   }
 }
 
+/* ===========================
+   HERO BACKGROUND IMAGE (FIX)
+   Targets your actual section: #welcome-hero
+=========================== */
+
+#welcome-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
+}
+
+/* Use an absolute GitHub Pages path (works regardless of CSS file location) */
+#welcome-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* ✅ MOST RELIABLE PATH ON GITHUB PAGES */
+  background-image: url("/GouthamiNadupuri/assets/images/about/golden-gate-bg.png");
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  opacity: 1;
+  z-index: 0;
+}
+
+/* Soft mist overlay for readability */
+#welcome-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 55% at 50% 25%, rgba(255,255,255,0.78), rgba(255,255,255,0.22), rgba(255,255,255,0)),
+    linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.25) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Put hero content above image */
+#welcome-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   FIX: Restore your title colors
+   (because .hero color override made it black)
+=========================== */
+
+#welcome-hero .hero-title {
+  color: #2b1a1f; /* Gouthami (dark) */
+}
+
+/* If your "Nadupuri" is wrapped in span/class, keep it pink */
+#welcome-hero .hero-title span,
+#welcome-hero .hero-title .accent,
+#welcome-hero .highlight {
+  color: #f9044d !important; /* Nadupuri (pink/red) */
+}
+
+/* Also keep your subtitle readable */
+#welcome-hero .hero-subtitle {
+  color: rgba(43, 26, 31, 0.72);
+}
+
 
