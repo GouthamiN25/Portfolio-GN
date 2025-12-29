@@ -182,7 +182,7 @@ main,
   inset: 0;
 
   /* ✅ Your attached image path */
-  background-image: url("assets/images/golden-gate-bg.png");
+  background-image: url("assets/images/about/golden-gate-bg.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -836,4 +836,5 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
 
