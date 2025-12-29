@@ -156,7 +156,6 @@ main,
 
 /* ===========================
    HERO BASE (layout only)
-   IMPORTANT: no background here (we apply bg on #welcome-hero)
 =========================== */
 .hero {
   min-height: 100vh;
@@ -188,12 +187,14 @@ main,
   margin: 0 0 0.9rem;
   letter-spacing: -0.03em;
   line-height: 1.05;
+  color: #2b1a1f;
 }
 
 .hero-subtitle {
   font-size: 1.15rem;
   opacity: 0.92;
   margin-bottom: 2.2rem;
+  color: rgba(43, 26, 31, 0.72);
 }
 
 .hero-actions {
@@ -210,30 +211,25 @@ main,
 }
 
 /* ===========================
-   HERO BACKGROUND (OFFICE PHOTO)
-   Applies ONLY to your welcome hero section
+   HERO BACKGROUND (Office Photo)
+   IMPORTANT: RELATIVE PATH from assets/css/style.css
 =========================== */
 #welcome-hero {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-
-  /* fallback */
   background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
 }
 
-/* background image */
+/* image */
 #welcome-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  background-image: url("/assets/images/about/hero-office.jpg");
+  background-image: url("../images/about/hero-office.jpg");
   background-repeat: no-repeat;
   background-position: center 35%;
   background-size: cover;
-
-  opacity: 1;
   z-index: 0;
 }
 
@@ -257,21 +253,10 @@ main,
   pointer-events: none;
 }
 
-/* hero content above */
+/* content above background */
 #welcome-hero > * {
   position: relative;
   z-index: 1;
-}
-
-/* Restore hero title/subtitle colors */
-#welcome-hero .hero-title { color: #2b1a1f; }
-#welcome-hero .hero-subtitle { color: rgba(43, 26, 31, 0.72); }
-
-/* Keep your Nadupuri highlight pink if wrapped in span/class */
-#welcome-hero .hero-title span,
-#welcome-hero .accent,
-#welcome-hero .highlight {
-  color: #f9044d !important;
 }
 
 /* ===========================
@@ -339,8 +324,7 @@ main,
 }
 
 /* ===========================
-   ABOUT BACKGROUND (Golden Gate pastel)
-   Requires: <section id="about"> ... </section>
+   ABOUT BACKGROUND (Golden Gate)
 =========================== */
 #about {
   position: relative;
@@ -351,11 +335,10 @@ main,
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/assets/images/about/golden-gate.png");
+  background-image: url("../images/about/golden-gate-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 1;
   z-index: 0;
 }
 
@@ -373,9 +356,7 @@ main,
   z-index: 1;
 }
 
-/* ===========================
-   ABOUT CONTENT
-=========================== */
+/* ABOUT CONTENT */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -417,8 +398,7 @@ main,
 }
 
 /* ===========================
-   EDUCATION BACKGROUND (cube + AI)
-   Requires: <section id="education"> ... </section>
+   EDUCATION BACKGROUND (two images)
 =========================== */
 #education {
   position: relative;
@@ -431,11 +411,11 @@ main,
   inset: 0;
 
   background-image:
-    url("/assets/images/about/edu-cube.png"),
-    url("/assets/images/about/edu-ai.png");
+    url("../images/about/edu-cube.png"),
+    url("../images/about/edu-ai.png");
 
   background-repeat: no-repeat, no-repeat;
-  background-position: left 10% top 20%, right 10% bottom 15%;
+  background-position: left 8% top 18%, right 8% bottom 12%;
   background-size: 520px auto, 520px auto;
 
   opacity: 0.22;
@@ -456,9 +436,7 @@ main,
   z-index: 1;
 }
 
-/* ===========================
-   EDUCATION CONTENT
-=========================== */
+/* EDUCATION CONTENT */
 .edu-list {
   margin-top: 2.1rem;
   display: flex;
@@ -929,4 +907,3 @@ main,
     grid-template-columns: 1fr;
   }
 }
-
