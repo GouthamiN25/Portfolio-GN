@@ -23,20 +23,14 @@ body {
 }
 
 /* ===========================
-   BASE / BODY (UPDATED)
+   BASE / BODY (modern neutral)
 =========================== */
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 
-  /* ✅ Modern premium neutral background (NOT poppy) */
-  background: linear-gradient(
-    180deg,
-    #fdfcfa 0%,
-    #fbf7f4 40%,
-    #f9f5f1 100%
-  );
-
+  /* Modern neutral background for whole site */
+  background: linear-gradient(180deg, #fdfcfa 0%, #fbf7f4 45%, #f9f5f1 100%);
   color: #5c1224;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +49,8 @@ a {
 }
 
 /* ===========================
-   SPARKLES (SUBTLE + PREMIUM)
+   SPARKLES (subtle + premium)
+   NOTE: We will DISABLE sparkles over hero so image stays clean
 =========================== */
 body::before,
 body::after {
@@ -71,11 +66,11 @@ body::before {
   background:
     radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 2px),
     radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 2px),
-    radial-gradient(circle, rgba(249, 4, 77, 0.10) 1.5px, transparent 3px);
+    radial-gradient(circle, rgba(249, 4, 77, 0.08) 1.5px, transparent 3px);
   background-size: 160px 160px, 240px 240px, 320px 320px;
   background-position: 0 0, 80px 60px, 140px 120px;
   animation: sparkleFloat 26s linear infinite;
-  opacity: 0.55;
+  opacity: 0.50;
 }
 
 /* Soft glow overlay */
@@ -114,7 +109,7 @@ main,
   left: 0;
   right: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(249, 4, 77, 0.10);
 }
@@ -164,7 +159,7 @@ main,
 }
 
 /* ===========================
-   HERO
+   HERO (WELCOME HERO) — IMAGE BACKGROUND ✅
 =========================== */
 .hero {
   min-height: 100vh;
@@ -173,8 +168,54 @@ main,
   justify-content: center;
   padding: 7.25rem 1.5rem 4rem;
   text-align: center;
-  color: #f9044d;
   position: relative;
+  overflow: hidden;
+
+  /* fallback if image doesn't load */
+  background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
+}
+
+/* Background image layer */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* ✅ Your attached image path */
+  background-image: url("assets/images/golden-gate-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* Keep it soft */
+  opacity: 1;
+  z-index: 0;
+}
+
+/* Mist overlay to keep text readable (very important) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* soft mist + vignette */
+  background:
+    radial-gradient(70% 55% at 50% 25%, rgba(255,255,255,0.78), rgba(255,255,255,0.25), rgba(255,255,255,0)),
+    linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0.35) 100%);
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure hero content is above image */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: make hero text colors look premium on image */
+.hero {
+  color: #2b1a1f; /* darker, modern */
 }
 
 .hero-inner {
@@ -200,8 +241,9 @@ main,
 
 .hero-subtitle {
   font-size: 1.15rem;
-  opacity: 0.95;
+  opacity: 0.92;
   margin-bottom: 2.2rem;
+  color: rgba(43, 26, 31, 0.75);
 }
 
 .hero-actions {
@@ -661,7 +703,6 @@ main,
   box-shadow: 0 0 0 2px rgba(249, 4, 77, 0.18);
 }
 
-/* contact form submit button – reuse hero gradient */
 .contact-btn {
   margin-top: 0.5rem;
   display: inline-flex;
@@ -691,7 +732,6 @@ main,
   color: #178f35;
 }
 
-/* Contact info block */
 .contact-info {
   text-align: left;
 }
@@ -776,7 +816,7 @@ main,
   }
 
   .nav-links {
-    display: none; /* simple: hide nav links on very small screens */
+    display: none;
   }
 
   .hero {
