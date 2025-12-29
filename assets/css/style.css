@@ -18,7 +18,6 @@ body {
    THEME VARIABLES
 =========================== */
 :root {
-  /* Same gradient for all hero buttons */
   --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
 }
 
@@ -29,9 +28,9 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 
-  /* Modern neutral background for whole site */
   background: linear-gradient(180deg, #fdfcfa 0%, #fbf7f4 45%, #f9f5f1 100%);
   color: #5c1224;
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
@@ -50,7 +49,6 @@ a {
 
 /* ===========================
    SPARKLES (subtle + premium)
-   NOTE: We will DISABLE sparkles over hero so image stays clean
 =========================== */
 body::before,
 body::after {
@@ -61,7 +59,6 @@ body::after {
   z-index: 0;
 }
 
-/* Soft sparkle dots */
 body::before {
   background:
     radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 2px),
@@ -73,7 +70,6 @@ body::before {
   opacity: 0.50;
 }
 
-/* Soft glow overlay */
 body::after {
   background:
     radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), transparent 50%),
@@ -159,7 +155,8 @@ main,
 }
 
 /* ===========================
-   HERO (WELCOME HERO) — IMAGE BACKGROUND ✅
+   HERO BASE (layout only)
+   IMPORTANT: no background here (we apply bg on #welcome-hero)
 =========================== */
 .hero {
   min-height: 100vh;
@@ -170,52 +167,6 @@ main,
   text-align: center;
   position: relative;
   overflow: hidden;
-
-  /* fallback if image doesn't load */
-  background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
-}
-
-/* Background image layer */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  /* ✅ Your attached image path */
-  background-image: url("assets/images/about/golden-gate-bg.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  /* Keep it soft */
-  opacity: 1;
-  z-index: 0;
-}
-
-/* Mist overlay to keep text readable (very important) */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  /* soft mist + vignette */
-  background:
-    radial-gradient(70% 55% at 50% 25%, rgba(255,255,255,0.78), rgba(255,255,255,0.25), rgba(255,255,255,0)),
-    linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0.35) 100%);
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Ensure hero content is above image */
-.hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: make hero text colors look premium on image */
-.hero {
-  color: #2b1a1f; /* darker, modern */
 }
 
 .hero-inner {
@@ -243,7 +194,6 @@ main,
   font-size: 1.15rem;
   opacity: 0.92;
   margin-bottom: 2.2rem;
-  color: rgba(43, 26, 31, 0.75);
 }
 
 .hero-actions {
@@ -257,6 +207,71 @@ main,
   margin-top: 2.75rem;
   font-size: 1.25rem;
   opacity: 0.85;
+}
+
+/* ===========================
+   HERO BACKGROUND (OFFICE PHOTO)
+   Applies ONLY to your welcome hero section
+=========================== */
+#welcome-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  /* fallback */
+  background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
+}
+
+/* background image */
+#welcome-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/GouthamiNadupuri/assets/images/about/hero-office.jpg");
+  background-repeat: no-repeat;
+  background-position: center 35%;
+  background-size: cover;
+
+  opacity: 1;
+  z-index: 0;
+}
+
+/* mist overlay */
+#welcome-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 60% at 50% 30%,
+      rgba(255,255,255,0.92),
+      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.20)
+    ),
+    linear-gradient(180deg,
+      rgba(255,255,255,0.40) 0%,
+      rgba(255,255,255,0.25) 60%,
+      rgba(255,255,255,0.45) 100%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* hero content above */
+#welcome-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Restore hero title/subtitle colors */
+#welcome-hero .hero-title { color: #2b1a1f; }
+#welcome-hero .hero-subtitle { color: rgba(43, 26, 31, 0.72); }
+
+/* Keep your Nadupuri highlight pink if wrapped in span/class */
+#welcome-hero .hero-title span,
+#welcome-hero .accent,
+#welcome-hero .highlight {
+  color: #f9044d !important;
 }
 
 /* ===========================
@@ -275,21 +290,18 @@ main,
   cursor: pointer;
 }
 
-/* View My Work – PRIMARY gradient button */
 .btn-primary {
   background: var(--btn-gradient);
   color: #ffffff;
   box-shadow: 0 18px 36px rgba(249, 4, 77, 0.30);
 }
 
-/* Contact Me + Resume – SAME gradient */
 .btn-ghost {
   background: var(--btn-gradient);
   color: #ffffff;
   box-shadow: 0 18px 36px rgba(249, 4, 77, 0.30);
 }
 
-/* Shared hover for all hero buttons */
 .btn-primary:hover,
 .btn-ghost:hover {
   transform: translateY(-1px);
@@ -327,7 +339,42 @@ main,
 }
 
 /* ===========================
-   ABOUT
+   ABOUT BACKGROUND (Golden Gate pastel)
+   Requires: <section id="about"> ... </section>
+=========================== */
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/GouthamiNadupuri/assets/images/about/golden-gate.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  z-index: 0;
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.78);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#about > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   ABOUT CONTENT
 =========================== */
 .about-grid {
   display: grid;
@@ -370,7 +417,47 @@ main,
 }
 
 /* ===========================
-   EDUCATION
+   EDUCATION BACKGROUND (cube + AI)
+   Requires: <section id="education"> ... </section>
+=========================== */
+#education {
+  position: relative;
+  overflow: hidden;
+}
+
+#education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("/GouthamiNadupuri/assets/images/about/edu-cube.png"),
+    url("/GouthamiNadupuri/assets/images/about/edu-ai.png");
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 10% top 20%, right 10% bottom 15%;
+  background-size: 520px auto, 520px auto;
+
+  opacity: 0.22;
+  z-index: 0;
+}
+
+#education::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.86);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#education > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   EDUCATION CONTENT
 =========================== */
 .edu-list {
   margin-top: 2.1rem;
@@ -808,6 +895,12 @@ main,
   .form-row {
     flex-direction: column;
   }
+
+  #education::before {
+    background-size: 340px auto, 340px auto;
+    background-position: left 5% top 10%, right 5% bottom 10%;
+    opacity: 0.18;
+  }
 }
 
 @media (max-width: 680px) {
@@ -836,74 +929,3 @@ main,
     grid-template-columns: 1fr;
   }
 }
-
-/* ===========================
-   HERO BACKGROUND IMAGE (FIX)
-   Targets your actual section: #welcome-hero
-=========================== */
-
-#welcome-hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #fff7fb 0%, #fff3f6 55%, #fff9ef 100%);
-}
-
-/* Use an absolute GitHub Pages path (works regardless of CSS file location) */
-#welcome-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  /* ✅ MOST RELIABLE PATH ON GITHUB PAGES */
-  background-image: url("/GouthamiNadupuri/assets/images/about/golden-gate-bg.png");
-
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  opacity: 1;
-  z-index: 0;
-}
-
-/* Soft mist overlay for readability */
-#welcome-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(70% 55% at 50% 25%, rgba(255,255,255,0.78), rgba(255,255,255,0.22), rgba(255,255,255,0)),
-    linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.25) 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Put hero content above image */
-#welcome-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* ===========================
-   FIX: Restore your title colors
-   (because .hero color override made it black)
-=========================== */
-
-#welcome-hero .hero-title {
-  color: #2b1a1f; /* Gouthami (dark) */
-}
-
-/* If your "Nadupuri" is wrapped in span/class, keep it pink */
-#welcome-hero .hero-title span,
-#welcome-hero .hero-title .accent,
-#welcome-hero .highlight {
-  color: #f9044d !important; /* Nadupuri (pink/red) */
-}
-
-/* Also keep your subtitle readable */
-#welcome-hero .hero-subtitle {
-  color: rgba(43, 26, 31, 0.72);
-}
-
-
-
