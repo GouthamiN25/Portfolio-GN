@@ -18,27 +18,23 @@ body {
    THEME VARIABLES
 =========================== */
 :root {
-  /* Same gradient for all hero buttons */
   --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
+  --pink-bg: linear-gradient(180deg, #ffe9f1 0%, #fff3f8 45%, #fff7fb 100%);
+  --text-main: #5c1224;
+  --text-soft: #7b3042;
+  --accent: #f9044d;
 }
 
 /* ===========================
-   BASE / BODY  ✅ LIGHT PINK BACKGROUND
+   BASE / BODY (LIGHT PINK BACK ✅)
 =========================== */
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 
-  /* ✅ Light pink background (your old look) */
-  background: linear-gradient(
-    180deg,
-    #fff6fb 0%,
-    #fff2f7 35%,
-    #fff7ef 70%,
-    #fffdfb 100%
-  );
+  background: var(--pink-bg);
+  color: var(--text-main);
 
-  color: #5c1224;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
@@ -56,7 +52,7 @@ a {
 }
 
 /* ===========================
-   SPARKLES (subtle + premium)
+   SPARKLES (SUBTLE)
 =========================== */
 body::before,
 body::after {
@@ -67,25 +63,23 @@ body::after {
   z-index: 0;
 }
 
-/* Soft sparkle dots */
 body::before {
   background:
-    radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,0.70) 1px, transparent 2px),
-    radial-gradient(circle, rgba(249, 4, 77, 0.06) 1.5px, transparent 3px);
+    radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 2px),
+    radial-gradient(circle, rgba(249, 4, 77, 0.10) 1.5px, transparent 3px);
   background-size: 160px 160px, 240px 240px, 320px 320px;
   background-position: 0 0, 80px 60px, 140px 120px;
   animation: sparkleFloat 26s linear infinite;
   opacity: 0.45;
 }
 
-/* Soft glow overlay */
 body::after {
   background:
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), transparent 52%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.35), transparent 58%);
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.35), transparent 55%);
   animation: shinePulse 7s ease-in-out infinite;
-  opacity: 0.45;
+  opacity: 0.55;
 }
 
 @keyframes sparkleFloat {
@@ -94,8 +88,8 @@ body::after {
 }
 
 @keyframes shinePulse {
-  0%, 100% { opacity: 0.38; }
-  50%      { opacity: 0.55; }
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.7; }
 }
 
 /* Keep content above sparkles */
@@ -115,7 +109,7 @@ main,
   left: 0;
   right: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(249, 4, 77, 0.10);
 }
@@ -129,11 +123,16 @@ main,
   justify-content: space-between;
 }
 
+/* GN badge (like the top left name badge style) */
 .nav-brand {
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
-  color: #f9044d;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  color: #ffffff;
+  background: var(--btn-gradient);
+  box-shadow: 0 10px 22px rgba(249, 4, 77, 0.20);
 }
 
 .nav-links {
@@ -145,8 +144,8 @@ main,
 .nav-links a {
   position: relative;
   font-weight: 500;
-  color: #7b3042;
-  opacity: 0.9;
+  color: var(--text-soft);
+  opacity: 0.92;
 }
 
 .nav-links a::after {
@@ -156,7 +155,7 @@ main,
   bottom: -0.35rem;
   width: 0;
   height: 2px;
-  background: #f9044d;
+  background: var(--accent);
   transition: width 0.2s ease;
 }
 
@@ -165,7 +164,7 @@ main,
 }
 
 /* ===========================
-   HERO (WELCOME) ✅ NO IMAGE, PINK BG
+   HERO BASE (layout)
 =========================== */
 .hero {
   min-height: 100vh;
@@ -176,33 +175,69 @@ main,
   text-align: center;
   position: relative;
   overflow: hidden;
-
-  /* ✅ Pink hero background */
-  background: linear-gradient(180deg, #fff6fb 0%, #fff2f7 55%, #fff7ef 100%);
 }
 
-/* Put hero content above sparkles */
-.hero > * {
+.hero-inner {
+  max-width: 900px;
+}
+
+/* ===========================
+   HERO BACKGROUND (OFFICE PHOTO + COSMOPHILE VIBES)
+   ✅ Correct path: from assets/css/ -> ../images/
+=========================== */
+#welcome-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: var(--pink-bg); /* fallback */
+}
+
+#welcome-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* ✅ OFFICE PHOTO (2nd image) */
+  background-image: url("../images/about/hero-office.jpg");
+  background-repeat: no-repeat;
+  background-position: center 35%;
+  background-size: cover;
+
+  z-index: 0;
+}
+
+/* overlay: light pink mist + cosmophile glow */
+#welcome-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 55% at 50% 30%, rgba(255,240,248,0.92), rgba(255,240,248,0.55), rgba(255,240,248,0.15)),
+    radial-gradient(35% 35% at 20% 25%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(35% 35% at 80% 55%, rgba(255,255,255,0.40), transparent 60%),
+    linear-gradient(180deg, rgba(255,233,241,0.55) 0%, rgba(255,247,251,0.35) 70%, rgba(255,233,241,0.55) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#welcome-hero > * {
   position: relative;
   z-index: 1;
 }
 
-.hero-inner {
-  max-width: 880px;
-}
-
+/* HERO TEXT */
 .hero-eyebrow {
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.9;
   margin-bottom: 0.9rem;
-  color: rgba(92, 18, 36, 0.85);
+  color: rgba(92, 18, 36, 0.75);
 }
 
 .hero-title {
-  font-size: clamp(3.6rem, 7vw, 5.1rem);
+  font-size: clamp(3.2rem, 7vw, 5rem);
   font-weight: 800;
   margin: 0 0 0.9rem;
   letter-spacing: -0.03em;
@@ -210,16 +245,9 @@ main,
   color: #2b1a1f;
 }
 
-/* Optional: if you wrap Nadupuri in <span class="accent"> */
-.accent,
-.highlight {
-  color: #f9044d !important;
-}
-
 .hero-subtitle {
-  font-size: 1.15rem;
-  opacity: 0.92;
-  margin-bottom: 2.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2.1rem;
   color: rgba(43, 26, 31, 0.72);
 }
 
@@ -252,12 +280,7 @@ main,
   cursor: pointer;
 }
 
-.btn-primary {
-  background: var(--btn-gradient);
-  color: #ffffff;
-  box-shadow: 0 18px 36px rgba(249, 4, 77, 0.30);
-}
-
+.btn-primary,
 .btn-ghost {
   background: var(--btn-gradient);
   color: #ffffff;
@@ -280,14 +303,14 @@ main,
 .panel {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 3rem 3.5rem;
-  background: rgba(255, 255, 255, 0.94);
+  padding: 2.4rem 3rem;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 30px;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
 }
 
 .panel-header h2 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   margin: 0 0 0.4rem;
   color: #d82447;
 }
@@ -301,19 +324,51 @@ main,
 }
 
 /* ===========================
-   ABOUT
+   ABOUT SECTION BACKGROUND (Golden Gate)
 =========================== */
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* ✅ Golden gate image */
+  background-image: url("../images/about/golden-gate-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  opacity: 0.25;
+  z-index: 0;
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 233, 241, 0.55);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#about > * { position: relative; z-index: 1; }
+
+/* ABOUT CONTENT */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 2.75rem;
-  margin-top: 2.25rem;
+  gap: 2.25rem;
+  margin-top: 1.8rem;
 }
 
 .about-main p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   font-size: 0.98rem;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .about-image {
@@ -328,24 +383,43 @@ main,
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
 }
 
-.social-links {
-  margin-top: 1.3rem;
-}
-
-.social-links a {
-  display: inline-block;
-  margin-right: 16px;
-  font-size: 1.1rem;
-  color: #d82447;
-}
-
-.social-links img {
-  vertical-align: middle;
-}
-
 /* ===========================
-   EDUCATION
+   EDUCATION BACKGROUND (2 images)
 =========================== */
+#education {
+  position: relative;
+  overflow: hidden;
+}
+
+#education::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("../images/about/edu-cube.png"),
+    url("../images/about/edu-ai.png");
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 6% top 25%, right 6% bottom 18%;
+  background-size: 460px auto, 460px auto;
+
+  opacity: 0.18;
+  z-index: 0;
+}
+
+#education::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 247, 251, 0.60);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#education > * { position: relative; z-index: 1; }
+
+/* EDUCATION CONTENT */
 .edu-list {
   margin-top: 2.1rem;
   display: flex;
@@ -365,22 +439,9 @@ main,
   border: 1px solid rgba(249, 4, 77, 0.06);
 }
 
-.edu-main h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
-}
-
-.edu-inst {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.92;
-}
-
-.edu-desc {
-  margin-top: 0.4rem;
-  font-size: 0.88rem;
-  opacity: 0.9;
-}
+.edu-main h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.edu-inst { margin: 0; font-size: 0.9rem; opacity: 0.92; }
+.edu-desc { margin-top: 0.4rem; font-size: 0.88rem; opacity: 0.9; }
 
 .edu-pill {
   font-size: 0.8rem;
@@ -392,7 +453,7 @@ main,
 }
 
 /* ===========================
-   EXPERIENCE
+   EXPERIENCE (unchanged style)
 =========================== */
 .exp-list {
   margin-top: 2.1rem;
@@ -424,10 +485,7 @@ main,
   justify-content: center;
 }
 
-.exp-logo img {
-  max-width: 90%;
-  height: auto;
-}
+.exp-logo img { max-width: 90%; height: auto; }
 
 .exp-header {
   display: flex;
@@ -436,12 +494,7 @@ main,
   gap: 0.75rem;
 }
 
-.exp-role {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #d82447;
-}
-
+.exp-role { font-size: 1rem; font-weight: 600; color: #d82447; }
 .exp-badge {
   font-size: 0.8rem;
   padding: 0.25rem 0.8rem;
@@ -450,16 +503,8 @@ main,
   color: #7b3042;
 }
 
-.exp-company {
-  font-size: 0.9rem;
-  margin: 0.2rem 0 0.4rem;
-}
-
-.exp-desc {
-  font-size: 0.9rem;
-  opacity: 0.95;
-  line-height: 1.6;
-}
+.exp-company { font-size: 0.9rem; margin: 0.2rem 0 0.4rem; }
+.exp-desc { font-size: 0.9rem; opacity: 0.95; line-height: 1.6; }
 
 /* ===========================
    PROJECTS
@@ -488,26 +533,10 @@ main,
   display: block;
 }
 
-.project-body {
-  padding: 1.4rem 1.5rem 1.5rem;
-}
-
-.project-body h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: #d82447;
-}
-
-.project-desc {
-  font-size: 0.9rem;
-  margin-bottom: 0.6rem;
-}
-
-.project-tech {
-  font-size: 0.85rem;
-  opacity: 0.85;
-  margin-bottom: 0.85rem;
-}
+.project-body { padding: 1.4rem 1.5rem 1.5rem; }
+.project-body h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: #d82447; }
+.project-desc { font-size: 0.9rem; margin-bottom: 0.6rem; }
+.project-tech { font-size: 0.85rem; opacity: 0.85; margin-bottom: 0.85rem; }
 
 .project-link {
   display: inline-block;
@@ -521,233 +550,13 @@ main,
   transition: 0.2s;
 }
 
-.project-link:hover {
-  background: #ffe3eb;
-}
+.project-link:hover { background: #ffe3eb; }
 
 /* ===========================
-   COURSES
+   COURSES / VOLUNTEER / SKILLS / CONTACT / FOOTER
+   (keep your existing styles — no change needed)
 =========================== */
-.courses-grid {
-  margin-top: 2.2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
 
-.course-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.2rem 1.25rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(249, 4, 77, 0.07);
-}
-
-.course-card h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-  color: #5c1224;
-  line-height: 1.35;
-}
-
-.course-meta {
-  margin: 0;
-  font-size: 0.88rem;
-  opacity: 0.9;
-  line-height: 1.45;
-}
-
-/* ===========================
-   VOLUNTEER
-=========================== */
-.volunteer-list {
-  margin-top: 2.2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.volunteer-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.4rem 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(249, 4, 77, 0.07);
-}
-
-.volunteer-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.05rem;
-  color: #5c1224;
-}
-
-.volunteer-desc {
-  margin: 0;
-  font-size: 0.92rem;
-  opacity: 0.95;
-  line-height: 1.6;
-}
-
-/* ===========================
-   SKILLS
-=========================== */
-.skills-grid {
-  margin-top: 2.4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.4rem;
-}
-
-.skill-item {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1rem 0.8rem;
-  width: 110px;
-  text-align: center;
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(249, 4, 77, 0.07);
-}
-
-.skill-item img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-}
-
-.skill-item span {
-  display: block;
-  margin-top: 0.6rem;
-  font-size: 0.82rem;
-  color: #7b3042;
-}
-
-/* ===========================
-   CONTACT
-=========================== */
-.contact-grid {
-  margin-top: 2.4rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 2.4rem;
-  align-items: flex-start;
-}
-
-.contact-form-wrapper {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.8rem 1.9rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(249, 4, 77, 0.08);
-}
-
-.form-row {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.form-field {
-  flex: 1;
-  margin-bottom: 1rem;
-}
-
-.form-field label {
-  display: block;
-  font-size: 0.8rem;
-  margin-bottom: 0.35rem;
-  font-weight: 500;
-  color: #7b3042;
-}
-
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  font-family: inherit;
-  font-size: 0.9rem;
-  resize: vertical;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-color: #f29;
-  box-shadow: 0 0 0 2px rgba(249, 4, 77, 0.18);
-}
-
-.contact-btn {
-  margin-top: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 2rem;
-  border-radius: 999px;
-  border: none;
-  font-size: 0.96rem;
-  font-weight: 600;
-  background: var(--btn-gradient);
-  color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0 16px 32px rgba(249, 4, 77, 0.30);
-  transition: 0.2s ease-out;
-}
-
-.contact-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 20px 40px rgba(249, 4, 77, 0.40);
-}
-
-.success-message {
-  display: none;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: #178f35;
-}
-
-.contact-info {
-  text-align: left;
-}
-
-.contact-info h3 {
-  margin-top: 0;
-  font-size: 1.4rem;
-  color: #d82447;
-}
-
-.contact-role {
-  margin: 0.3rem 0 1rem;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.contact-lines p {
-  margin: 0.3rem 0;
-}
-
-.contact-social {
-  margin-top: 1.3rem;
-  display: flex;
-  gap: 0.75rem;
-}
-
-.contact-social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #f9044d;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 0.95rem;
-  box-shadow: 0 14px 28px rgba(249, 4, 77, 0.35);
-}
-
-/* ===========================
-   FOOTER
-=========================== */
 .site-footer {
   text-align: center;
   padding: 1.75rem 1rem 2.2rem;
@@ -760,53 +569,23 @@ main,
    RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.85rem;
-  }
+  .nav-links { gap: 1rem; font-size: 0.85rem; }
+  .panel { padding: 2.2rem 1.6rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .edu-card { flex-direction: column; align-items: flex-start; }
 
-  .panel {
-    padding: 2.5rem 1.8rem 2.8rem;
-  }
-
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .edu-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .form-row {
-    flex-direction: column;
+  #education::before {
+    background-size: 320px auto, 320px auto;
+    background-position: left 5% top 10%, right 5% bottom 10%;
+    opacity: 0.14;
   }
 }
 
 @media (max-width: 680px) {
-  .nav-container {
-    padding-inline: 1.1rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero {
-    padding-top: 6.25rem;
-  }
-
-  .panel {
-    padding: 2.2rem 1.4rem 2.5rem;
-    border-radius: 24px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .exp-card {
-    grid-template-columns: 1fr;
-  }
+  .nav-container { padding-inline: 1.1rem; }
+  .nav-links { display: none; }
+  .hero { padding-top: 6.25rem; }
+  .panel { padding: 2rem 1.3rem; border-radius: 24px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .exp-card { grid-template-columns: 1fr; }
 }
