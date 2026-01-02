@@ -162,45 +162,38 @@ main,
 }
 
 /* ===========================
-   HERO (keep same) + ADD PROFILE IMAGE ✅
+   HERO ✅ (text left + photo right)
 =========================== */
-.hero {
+#welcome-hero.hero {
   min-height: 100vh;
+  padding: 7.25rem 1.5rem 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7.25rem 1.5rem 4rem;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
 
-.hero-inner {
-  max-width: 880px;
+#welcome-hero .hero-inner {
+  max-width: 1120px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr; /* text left, image right */
+  align-items: center;
+  gap: 3rem;
   position: relative;
 }
 
-/* ✅ Add your profile image on hero WITHOUT changing HTML */
-#welcome-hero {
-  position: relative;
-  overflow: hidden;
-}
-
+/* photo right */
 #welcome-hero .hero-inner::after {
   content: "";
-  position: absolute;
-
-  /* right side, slightly above center */
-  right: -260px;
-  top: 50%;
-  transform: translateY(-52%);
-
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   border-radius: 999px;
 
-  /* ✅ CORRECT PATH from assets/css/style.css */
-  background-image: url("assets/images/about/me-main.png");
+  /* ✅ correct from assets/css/style.css */
+  background-image: url("../images/about/me-main.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -208,11 +201,11 @@ main,
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
   border: 8px solid rgba(255, 255, 255, 0.75);
 
-  opacity: 1;
+  justify-self: end;
   pointer-events: none;
 }
 
-/* Keep hero text readable */
+/* hero text */
 .hero-eyebrow {
   font-size: 0.95rem;
   font-weight: 500;
@@ -223,7 +216,7 @@ main,
 }
 
 .hero-title {
-  font-size: clamp(3.6rem, 7vw, 5.1rem);
+  font-size: clamp(3.2rem, 6vw, 4.8rem);
   font-weight: 800;
   margin: 0 0 0.9rem;
   letter-spacing: -0.03em;
@@ -240,7 +233,7 @@ main,
 
 .hero-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -314,25 +307,30 @@ main,
 }
 
 /* ===========================
-   ABOUT
+   ABOUT ✅ (photo left, text right)
 =========================== */
-.about-grid {
+#about .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: 0.85fr 1.15fr;
   gap: 2.75rem;
   margin-top: 2.25rem;
+  align-items: start;
+}
+
+#about .about-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#about .about-main {
+  text-align: left;
 }
 
 .about-main p {
   margin-bottom: 1rem;
   font-size: 0.98rem;
   line-height: 1.7;
-}
-
-.about-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .profile-img {
@@ -578,35 +576,34 @@ main,
   overflow: hidden;
 }
 
-/* Golden Gate background image */
+/* ✅ background image */
 #volunteer::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  /* ✅ CORRECT PATH from assets/css/style.css */
-  background-image: url("assets/images/about/golden-gate-bg.png");
+  /* ✅ correct from assets/css/style.css */
+  background-image: url("../images/about/golden-gate-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  opacity: 0.35; /* subtle */
+  opacity: 0.45; /* make it visible */
   z-index: 0;
   pointer-events: none;
 }
 
-/* white mist so cards stay readable */
+/* ✅ overlay to keep readable */
 #volunteer::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 235, 242, 0.72);
+  background: rgba(255, 230, 239, 0.68);
   z-index: 0;
   pointer-events: none;
 }
 
-/* keep volunteer content above background */
-#volunteer > * {
+#volunteer .panel {
   position: relative;
   z-index: 1;
 }
@@ -808,7 +805,7 @@ main,
 }
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE (general)
 =========================== */
 @media (max-width: 900px) {
   .nav-links {
@@ -820,7 +817,6 @@ main,
     padding: 2.5rem 1.8rem 2.8rem;
   }
 
-  .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -833,13 +829,6 @@ main,
   .form-row {
     flex-direction: column;
   }
-
-  /* ✅ keep photo but smaller */
-  #welcome-hero .hero-inner::after {
-    right: -180px;
-    width: 240px;
-    height: 240px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -849,10 +838,6 @@ main,
 
   .nav-links {
     display: none;
-  }
-
-  .hero {
-    padding-top: 6.25rem;
   }
 
   .panel {
@@ -867,10 +852,4 @@ main,
   .exp-card {
     grid-template-columns: 1fr;
   }
-
-  /* ✅ hide floating hero image on mobile (keeps layout clean) */
-  #welcome-hero .hero-inner::after {
-    display: none;
-  }
 }
-
