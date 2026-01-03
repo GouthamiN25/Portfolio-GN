@@ -661,71 +661,43 @@ main,
 }
 
 /* ===========================
-   VOLUNTEER ✅ Golden Gate BG (FIXED PATH)
+   VOLUNTEER — Background Image + Soft Overlay
 =========================== */
 #volunteer {
   position: relative;
   overflow: hidden;
 }
 
-/* Golden Gate background image */
+/* background image */
 #volunteer::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  /* ✅ FIXED PATH */
-  background-image: url("../images/about/golden-gate-bg.png");
+  background-image: url("../images/about/golden-gate-bg.png"); /* ✅ correct path */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  opacity: 0.35;
+  opacity: 0.32;
   z-index: 0;
   pointer-events: none;
 }
 
-/* soft mist */
+/* soft pink overlay so text stays readable */
 #volunteer::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 235, 242, 0.72);
+  background: rgba(255, 235, 242, 0.75);
   z-index: 0;
   pointer-events: none;
 }
 
-/* keep volunteer content above background */
+/* keep volunteer content above bg */
 #volunteer > * {
   position: relative;
   z-index: 1;
 }
 
-.volunteer-list {
-  margin-top: 2.2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.volunteer-card {
-  border-radius: 18px;
-  padding: 1.4rem 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-}
-
-.volunteer-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.05rem;
-  color: #5c1224;
-}
-
-.volunteer-desc {
-  margin: 0;
-  font-size: 0.92rem;
-  opacity: 0.95;
-  line-height: 1.6;
-}
 
 /* ===========================
    SKILLS
@@ -998,3 +970,4 @@ main,
   position: relative;
   z-index: 1;
 }
+
