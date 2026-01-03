@@ -317,54 +317,80 @@ main,
   margin: 0.75rem auto 0;
 }
 
-/* ===========================
-   ABOUT (photo LEFT, content RIGHT)
-=========================== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr; /* ✅ photo first */
-  gap: 2.75rem;
-  margin-top: 2.25rem;
-  align-items: center;
+/* =========================================================
+   ABOUT SECTION – FORCE PERFECT ALIGNMENT (PUT AT END)
+========================================================= */
+
+/* Make sure ABOUT uses the same centered panel width */
+#about.section {
+  padding-top: 2.5rem;
 }
 
-.about-image {
-  grid-column: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#about .panel {
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.about-main {
-  grid-column: 2;
-  text-align: left; /* ✅ left align text */
+/* ✅ FORCE: 2 columns (photo left, content right) */
+#about .about-grid {
+  display: grid !important;
+  grid-template-columns: 420px 1fr !important;
+  gap: 3rem !important;
+  align-items: start !important;
 }
 
-.about-main p {
-  margin-bottom: 1rem;
-  font-size: 0.98rem;
-  line-height: 1.7;
+/* ✅ FORCE order: image LEFT, text RIGHT */
+#about .about-image {
+  order: 1 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
 }
 
-.profile-img {
-  max-width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+#about .about-main {
+  order: 2 !important;
+  text-align: left !important;
 }
 
-.social-links {
-  margin-top: 1.3rem;
+/* ✅ Image sizing (keeps it pretty + not too huge) */
+#about .about-image img,
+#about img.profile-img {
+  width: 100% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 24px !important;
+  object-fit: cover !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14) !important;
 }
 
-.social-links a {
-  display: inline-block;
-  margin-right: 16px;
-  font-size: 1.1rem;
-  color: #d82447;
+/* ✅ Fix social icons alignment under text */
+#about .social-links {
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
 }
 
-.social-links img {
-  vertical-align: middle;
+/* ✅ Mobile: stack nicely (image on top, then text) */
+@media (max-width: 900px) {
+  #about .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  #about .about-image {
+    order: 1 !important;
+    justify-content: center !important;
+  }
+
+  #about .about-main {
+    order: 2 !important;
+  }
+
+  #about .social-links {
+    justify-content: center !important;
+  }
 }
 
 /* ===========================
@@ -908,3 +934,4 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
