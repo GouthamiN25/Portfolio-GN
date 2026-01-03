@@ -205,7 +205,7 @@ main,
   border-radius: 999px;
 
   /* ✅ IMPORTANT: correct relative path from assets/css/style.css */
-  background-image: url("../images/about/me-main.png");
+  background-image: url("../images/about/profile_image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -934,4 +934,5 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
 
