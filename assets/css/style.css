@@ -1,11 +1,3 @@
-/* =========================================================
-   FULL UPDATED CSS (Cosmic Pink + Rich Red + Subtle Sparkles)
-   - Restores reddish shade on "cubicles"/cards (panel)
-   - Adds tasteful backgrounds to selected sections
-   - Keeps hero UX clean (does NOT force weird layout)
-   - Fixes About alignment + photo sizing responsively
-========================================================= */
-
 /* ===========================
    GLOBAL RESET
 =========================== */
@@ -22,9 +14,35 @@ body {
   scroll-behavior: smooth;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* ===========================
+   THEME VARIABLES
+=========================== */
+:root {
+  --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
+}
+
+/* ===========================
+   BASE / BODY (LIGHT PINK)
+=========================== */
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* ✅ LIGHT PINK BACKGROUND (site-wide) */
+  background: linear-gradient(
+    180deg,
+    #ffe6ef 0%,
+    #ffeaf2 35%,
+    #fff1f6 70%,
+    #fff6f9 100%
+  );
+
+  color: #5c1224;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  position: relative;
+  overflow-x: hidden;
 }
 
 a {
@@ -32,541 +50,887 @@ a {
   color: inherit;
 }
 
-/* ===========================
-   THEME VARIABLES
-=========================== */
-:root {
-  --bg-0: #fff7fa;
-  --bg-1: #ffe9f1;
-  --ink: #1d0f14;
-  --muted: rgba(29, 15, 20, 0.72);
-
-  --brand: #f9044d;   /* rich red/pink */
-  --brand-2: #ff1e80;
-  --brand-3: #ff4b5c;
-
-  --card-border: rgba(249, 4, 77, 0.12);
-  --card-shadow: 0 18px 40px rgba(249, 4, 77, 0.06), 0 8px 18px rgba(0, 0, 0, 0.04);
-
-  --radius-xl: 22px;
-  --radius-lg: 18px;
-  --radius-md: 14px;
-
-  --container: 1120px;
-
-  /* Same gradient for all hero buttons */
-  --btn-gradient: linear-gradient(135deg, #ff4b5c 0%, #f9044d 50%, #ff1e80 100%);
+.text-center {
+  text-align: center;
 }
 
 /* ===========================
-   BODY + GLOBAL BACKGROUND
+   SPARKLES (subtle)
 =========================== */
-body {
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color: var(--ink);
-  background: radial-gradient(circle at 20% 18%, var(--bg-1), transparent 52%),
-              radial-gradient(circle at 80% 30%, rgba(255, 210, 225, 0.65), transparent 55%),
-              linear-gradient(180deg, var(--bg-0), #ffffff);
-  overflow-x: hidden;
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Optional: keep headings crisp */
-h1, h2, h3 {
-  margin: 0 0 12px;
-  line-height: 1.15;
+body::before {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.85) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 2px),
+    radial-gradient(circle, rgba(249, 4, 77, 0.07) 1.5px, transparent 3px);
+  background-size: 160px 160px, 240px 240px, 320px 320px;
+  background-position: 0 0, 80px 60px, 140px 120px;
+  animation: sparkleFloat 26s linear infinite;
+  opacity: 0.35;
 }
 
-p {
-  margin: 0 0 14px;
-  color: var(--muted);
-  line-height: 1.75;
+body::after {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.35), transparent 55%);
+  animation: shinePulse 7s ease-in-out infinite;
+  opacity: 0.35;
+}
+
+@keyframes sparkleFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-90px); }
+}
+
+@keyframes shinePulse {
+  0%, 100% { opacity: 0.28; }
+  50%      { opacity: 0.45; }
+}
+
+/* Keep content above sparkles */
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===========================
-   GLOBAL CONTAINER
+   NAVBAR
 =========================== */
-.container,
-.main-container,
-.wrapper {
-  width: min(var(--container), 92vw);
-  margin-inline: auto;
-}
-
-/* ===========================
-   NAVBAR (top)
-=========================== */
-header,
-.navbar,
-.top-nav {
-  position: sticky;
+.site-header {
+  position: fixed;
   top: 0;
-  z-index: 999;
-  background: rgba(255, 247, 250, 0.72);
-  backdrop-filter: blur(10px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(249, 4, 77, 0.10);
 }
 
-.navbar .container,
-.top-nav .container,
-header .container {
+.nav-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.75rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
 }
 
-.logo,
-.brand,
-.nav-logo {
+.nav-brand {
   font-weight: 800;
-  letter-spacing: 0.5px;
-  color: var(--brand);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: #f9044d;
 }
 
-nav ul,
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
+  gap: 1.5rem;
+  font-size: 0.95rem;
 }
 
-nav a,
 .nav-links a {
+  position: relative;
   font-weight: 500;
-  color: rgba(29, 15, 20, 0.78);
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: #7b3042;
+  opacity: 0.9;
 }
 
-nav a:hover,
-.nav-links a:hover {
-  color: var(--brand);
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 0;
+  height: 2px;
+  background: #f9044d;
+  transition: width 0.2s ease;
 }
 
-@media (max-width: 860px) {
-  nav ul,
-  .nav-links {
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* ===========================
-   HERO SECTION
-   (Does NOT force a redesign; only styling)
+   HERO (FIXED UX)
+   ✅ left text, right photo
 =========================== */
-#home,
-.hero,
-.hero-section {
-  position: relative;
-  padding: 64px 0 58px;
-}
-
-/* Sparkle overlay (subtle, visible, not noisy) */
-#home::before,
-.hero::before,
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.55;
-  background:
-    radial-gradient(circle at 12% 30%, rgba(255, 255, 255, 0.95) 0 1px, transparent 2px),
-    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.90) 0 1px, transparent 2px),
-    radial-gradient(circle at 58% 25%, rgba(255, 255, 255, 0.90) 0 1px, transparent 2px),
-    radial-gradient(circle at 78% 62%, rgba(255, 255, 255, 0.92) 0 1px, transparent 2px),
-    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.92) 0 1px, transparent 2px);
-  filter: drop-shadow(0 0 10px rgba(249, 4, 77, 0.08));
-}
-
-/* If your hero has a grid wrapper */
-.hero .container,
-.hero-section .container,
-#home .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Typical two-column hero support without forcing it */
-.hero-grid,
-.hero-content {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 28px;
+.hero {
+  min-height: 100vh;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 7.25rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
 }
 
-@media (max-width: 960px) {
-  .hero-grid,
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+.hero-inner {
+  /* ✅ real layout, not floating */
+  width: 100%;
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 2.2rem;
+  text-align: left;
+  position: relative;
 }
 
-/* Hero text styling */
-.hero-kicker,
-.kicker,
-.small-title {
-  letter-spacing: 0.18em;
+/* ✅ keep ALL hero content on left column */
+#welcome-hero .hero-inner > * {
+  grid-column: 1;
+}
+
+/* ✅ photo becomes a grid item (not absolute) */
+#welcome-hero .hero-inner::after {
+  content: "";
+  grid-column: 2;
+  grid-row: 1 / span 6;
+  justify-self: end;
+  align-self: center;
+
+  width: 340px;
+  height: 340px;
+  border-radius: 999px;
+
+  /* ✅ IMPORTANT: correct relative path from assets/css/style.css */
+  background-image: url("../images/about/me-main.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  border: 10px solid rgba(255, 255, 255, 0.75);
+
+  pointer-events: none;
+}
+
+/* Hero text */
+.hero-eyebrow {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 600;
-  color: rgba(29, 15, 20, 0.70);
-  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 0.9rem;
 }
 
-.hero-title,
-#home h1,
-.hero h1 {
-  font-size: clamp(38px, 4.6vw, 64px);
+.hero-title {
+  font-size: clamp(3.2rem, 6vw, 5.1rem);
   font-weight: 800;
-  color: var(--ink);
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #2b1a1f;
 }
 
-.hero-subtitle,
-.tagline,
-#home .subtitle {
-  font-size: clamp(16px, 1.4vw, 19px);
-  color: rgba(29, 15, 20, 0.66);
+.hero-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.92;
+  margin-bottom: 2.2rem;
+  color: rgba(43, 26, 31, 0.72);
 }
 
-/* Buttons */
-.btn,
-button.btn,
-a.btn {
+.hero-actions {
+  display: flex;
+  justify-content: flex-start; /* ✅ left aligned now */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-scroll {
+  margin-top: 2.75rem;
+  font-size: 1.25rem;
+  opacity: 0.85;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
+  padding: 0.9rem 2.2rem;
   border-radius: 999px;
-  border: 0;
-  cursor: pointer;
+  font-size: 0.98rem;
   font-weight: 600;
-  color: #fff;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.btn-primary,
+.btn-ghost {
   background: var(--btn-gradient);
-  box-shadow: 0 14px 28px rgba(249, 4, 77, 0.22);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(249, 4, 77, 0.30);
 }
 
-.btn:hover {
+.btn-primary:hover,
+.btn-ghost:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 36px rgba(249, 4, 77, 0.28);
-  filter: saturate(1.08);
-}
-
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Hero profile image (if used) */
-.hero-photo,
-.profile-img,
-.hero img.profile {
-  width: min(320px, 72vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 8px solid rgba(255, 255, 255, 0.72);
-  box-shadow: 0 26px 60px rgba(249, 4, 77, 0.12);
-  margin-left: auto;
-}
-
-@media (max-width: 960px) {
-  .hero-photo,
-  .profile-img,
-  .hero img.profile {
-    margin-inline: auto;
-  }
+  box-shadow: 0 22px 44px rgba(249, 4, 77, 0.40);
 }
 
 /* ===========================
-   SECTION BASE STYLES
+   SECTIONS + PANELS
 =========================== */
-section {
+.section {
+  padding: 0 1.5rem 4.5rem;
   position: relative;
-  padding: 72px 0;
 }
 
-.section-title,
-section h2 {
-  text-align: center;
-  font-size: clamp(26px, 2.6vw, 40px);
-  font-weight: 800;
-  color: var(--brand);
-  margin-bottom: 26px;
-}
-
-/* ===========================
-   "CUBICLES" / PANELS (RESTORED REDDISH SHADE)
-=========================== */
-.panel,
-.card,
-.section-box,
-.content-box,
-.about-card,
-.edu-card,
-.exp-card,
-.project-card,
-.course-card,
-.volunteer-card,
-.contact-card {
-  background: linear-gradient(180deg, rgba(255, 235, 240, 0.92), rgba(255, 255, 255, 0.96));
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--card-shadow);
-}
-
-/* A safe default padding if your markup uses .panel */
 .panel {
-  padding: 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 3.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 30px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
 }
 
-/* If your cards look too tight on mobile */
-@media (max-width: 560px) {
-  .panel {
-    padding: 20px;
-    border-radius: 18px;
+.panel-header h2 {
+  font-size: 2.4rem;
+  margin: 0 0 0.4rem;
+  color: #d82447;
+}
+
+.panel-subtitle {
+  font-size: 0.98rem;
+  opacity: 0.9;
+  color: #7b3042;
+  max-width: 520px;
+  margin: 0.75rem auto 0;
+}
+
+/* =========================================================
+   ABOUT SECTION – FORCE PERFECT ALIGNMENT (PUT AT END)
+========================================================= */
+
+/* Make sure ABOUT uses the same centered panel width */
+#about.section {
+  padding-top: 2.5rem;
+}
+
+#about .panel {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ✅ FORCE: 2 columns (photo left, content right) */
+#about .about-grid {
+  display: grid !important;
+  grid-template-columns: 420px 1fr !important;
+  gap: 3rem !important;
+  align-items: start !important;
+}
+
+/* ✅ FORCE order: image LEFT, text RIGHT */
+#about .about-image {
+  order: 1 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+#about .about-main {
+  order: 2 !important;
+  text-align: left !important;
+}
+
+/* ✅ Image sizing (keeps it pretty + not too huge) */
+#about .about-image img,
+#about img.profile-img {
+  width: 100% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 24px !important;
+  object-fit: cover !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* ✅ Fix social icons alignment under text */
+#about .social-links {
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+/* ✅ Mobile: stack nicely (image on top, then text) */
+@media (max-width: 900px) {
+  #about .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  #about .about-image {
+    order: 1 !important;
+    justify-content: center !important;
+  }
+
+  #about .about-main {
+    order: 2 !important;
+  }
+
+  #about .social-links {
+    justify-content: center !important;
   }
 }
 
 /* ===========================
-   ABOUT SECTION (Alignment + Photo)
-   Goal: text + photo align nicely, no weird empty gaps
+   EDUCATION
 =========================== */
-#about {
-  position: relative;
+.edu-list {
+  margin-top: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-/* Add subtle background so it’s not plain white */
-#about::before {
+.edu-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.4rem 1.6rem;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(249, 4, 77, 0.06);
+}
+
+.edu-main h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.edu-inst {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+
+.edu-desc {
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.edu-pill {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(249, 4, 77, 0.08);
+  color: #7b3042;
+  white-space: nowrap;
+}
+
+/* ===========================
+   EXPERIENCE
+=========================== */
+.exp-list {
+  margin-top: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.3rem 1.5rem;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(249, 4, 77, 0.06);
+}
+
+.exp-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(249, 4, 77, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-logo img {
+  max-width: 90%;
+  height: auto;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.exp-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d82447;
+}
+
+.exp-badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(249, 4, 77, 0.08);
+  color: #7b3042;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.exp-desc {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* ===========================
+   PROJECTS
+=========================== */
+.projects-grid {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(249, 4, 77, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-body {
+  padding: 1.4rem 1.5rem 1.5rem;
+}
+
+.project-body h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #d82447;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-tech {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-bottom: 0.85rem;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid #d82447;
+  color: #d82447;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.project-link:hover {
+  background: #ffe3eb;
+}
+
+/* ===========================
+   COURSES
+=========================== */
+.courses-grid {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(249, 4, 77, 0.07);
+}
+
+.course-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: #5c1224;
+  line-height: 1.35;
+}
+
+.course-meta {
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+/* ===========================
+   VOLUNTEER ✅ Golden Gate BG (FIXED)
+   - Put BG inside the PANEL so it is visible
+=========================== */
+#volunteer .panel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Golden Gate background image */
+#volunteer .panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(249,4,77,0.06), transparent 50%),
-    radial-gradient(circle at 80% 65%, rgba(249,4,77,0.05), transparent 55%);
+
+  /* ✅ correct path from assets/css/style.css */
+  background-image: url("../images/about/golden-gate-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  opacity: 0.38;
   z-index: 0;
+  pointer-events: none;
 }
 
-/* Ensure content sits above the ::before */
-#about > * {
+/* soft pink mist above image */
+#volunteer .panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 235, 242, 0.72);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* keep volunteer content above background */
+#volunteer .panel > * {
   position: relative;
   z-index: 1;
 }
 
-/* If your About section has a wrapper like .about-content */
-.about-content,
-.about-wrapper,
-#about .container {
-  width: min(var(--container), 92vw);
-  margin-inline: auto;
-}
-
-/* Typical About layout: text + image */
-.about-grid,
-.about-row {
+.volunteer-list {
+  margin-top: 2.2rem;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 34px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-@media (max-width: 980px) {
-  .about-grid,
-  .about-row {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+.volunteer-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(249, 4, 77, 0.07);
 }
 
-/* About text card */
-.about-text,
-.about-description,
-#about .about-text {
-  padding: 28px;
-  border-radius: var(--radius-xl);
+.volunteer-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: #5c1224;
 }
 
-/* About social icons row */
-.social-icons,
-.about-social,
-#about .social-icons {
+.volunteer-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+.skills-grid {
+  margin-top: 2.4rem;
   display: flex;
-  gap: 14px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
 }
 
-@media (max-width: 980px) {
-  .social-icons,
-  .about-social,
-  #about .social-icons {
-    justify-content: center;
-  }
+.skill-item {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem 0.8rem;
+  width: 110px;
+  text-align: center;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(249, 4, 77, 0.07);
 }
 
-.social-icons a,
-.about-social a {
-  width: 42px;
-  height: 42px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.70);
-  border: 1px solid rgba(249, 4, 77, 0.10);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+.skill-item img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
-.social-icons a:hover,
-.about-social a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(249, 4, 77, 0.12);
-}
-
-/* About photo container (prevents “not aligned” look) */
-.about-photo,
-.about-image,
-#about .about-photo {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid rgba(249,4,77,0.10);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 22px 46px rgba(0,0,0,0.06);
-}
-
-/* About actual img */
-.about-photo img,
-.about-image img,
-#about img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* If your about photo needs consistent height to align with text */
-.about-photo.fixed,
-.about-image.fixed {
-  min-height: 360px;
-}
-
-.about-photo.fixed img,
-.about-image.fixed img {
-  height: 100%;
+.skill-item span {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: #7b3042;
 }
 
 /* ===========================
-   SECTION BACKGROUNDS (Add variety, not boring)
-   Apply only to selected sections via IDs
+   CONTACT
 =========================== */
-
-/* Education: gentle bloom */
-#education {
-  position: relative;
-}
-#education::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 15% 25%, rgba(249,4,77,0.06), transparent 45%),
-    radial-gradient(circle at 85% 70%, rgba(249,4,77,0.05), transparent 50%);
-  z-index: 0;
-}
-#education > * { position: relative; z-index: 1; }
-
-/* Projects: slightly stronger bloom */
-#projects {
-  position: relative;
-}
-#projects::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 200, 215, 0.35), transparent 45%),
-    radial-gradient(circle at 80% 65%, rgba(255, 215, 230, 0.35), transparent 50%);
-  z-index: 0;
-}
-#projects > * { position: relative; z-index: 1; }
-
-/* Skills: clean gradient wash */
-#skills {
-  background:
-    linear-gradient(180deg, rgba(255,240,245,0.70), rgba(255, 255, 255, 0.92));
-}
-
-/* Volunteer: soft highlight (works even without image) */
-#volunteer,
-#volunteering {
-  position: relative;
-}
-#volunteer::before,
-#volunteering::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 70% 30%, rgba(249,4,77,0.07), transparent 55%),
-    radial-gradient(circle at 20% 70%, rgba(249,4,77,0.05), transparent 55%);
-  z-index: 0;
-}
-#volunteer > *,
-#volunteering > * { position: relative; z-index: 1; }
-
-/* Contact: warm closing section */
-#contact {
-  background:
-    radial-gradient(circle at 50% 30%, rgba(249,4,77,0.08), transparent 55%),
-    linear-gradient(180deg, rgba(255,240,245,0.80), #ffffff);
-}
-
-/* ===========================
-   LIST / GRID HELPERS (safe)
-=========================== */
-.grid,
-.cards-grid,
-.projects-grid,
-.edu-grid,
-.exp-grid {
+.contact-grid {
+  margin-top: 2.4rem;
   display: grid;
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.4rem;
+  align-items: flex-start;
 }
 
-@media (min-width: 900px) {
-  .grid.cols-2,
-  .cards-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.contact-form-wrapper {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem 1.9rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(249, 4, 77, 0.08);
+}
 
-  .grid.cols-3,
-  .cards-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.form-row {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.form-field {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: #7b3042;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #f29;
+  box-shadow: 0 0 0 2px rgba(249, 4, 77, 0.18);
+}
+
+.contact-btn {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.96rem;
+  font-weight: 600;
+  background: var(--btn-gradient);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(249, 4, 77, 0.30);
+  transition: 0.2s ease-out;
+}
+
+.contact-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(249, 4, 77, 0.40);
+}
+
+.success-message {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #178f35;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #d82447;
+}
+
+.contact-role {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.contact-lines p {
+  margin: 0.3rem 0;
+}
+
+.contact-social {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f9044d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.95rem;
+  box-shadow: 0 14px 28px rgba(249, 4, 77, 0.35);
 }
 
 /* ===========================
    FOOTER
 =========================== */
-footer {
-  padding: 28px 0;
+.site-footer {
   text-align: center;
-  color: rgba(29, 15, 20, 0.55);
-  border-top: 1px solid rgba(249, 4, 77, 0.10);
-  background: rgba(255, 247, 250, 0.70);
+  padding: 1.75rem 1rem 2.2rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  color: #7b3042;
 }
 
 /* ===========================
-   SMALL QUALITY FIXES
+   RESPONSIVE
 =========================== */
-hr {
-  border: 0;
-  height: 1px;
-  background: rgba(249, 4, 77, 0.10);
-  margin: 18px 0;
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .panel {
+    padding: 2.5rem 1.8rem 2.8rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  /* Hero becomes stacked */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #welcome-hero .hero-inner > * {
+    grid-column: 1;
+  }
+
+  #welcome-hero .hero-inner::after {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    width: 260px;
+    height: 260px;
+    margin-top: 1.4rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image,
+  .about-main {
+    grid-column: 1;
+  }
+
+  .about-main {
+    text-align: left;
+  }
 }
 
-/* Prevent any section content from touching edges */
-section .container > * {
-  max-width: 100%;
+@media (max-width: 680px) {
+  .nav-container {
+    padding-inline: 1.1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 6.25rem;
+  }
+
+  .panel {
+    padding: 2.2rem 1.4rem 2.5rem;
+    border-radius: 24px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-card {
+    grid-template-columns: 1fr;
+  }
 }
