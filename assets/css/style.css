@@ -609,7 +609,6 @@ main,
 
 /* ===========================
    VOLUNTEER ✅ Golden Gate BG (FIXED)
-   - Put BG inside the PANEL so it is visible
 =========================== */
 #volunteer .panel {
   position: relative;
@@ -621,13 +620,10 @@ main,
   content: "";
   position: absolute;
   inset: 0;
-
-  /* ✅ correct path from assets/css/style.css */
   background-image: url("../images/about/golden-gate-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   opacity: 0.38;
   z-index: 0;
   pointer-events: none;
@@ -647,34 +643,6 @@ main,
 #volunteer .panel > * {
   position: relative;
   z-index: 1;
-}
-
-.volunteer-list {
-  margin-top: 2.2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.volunteer-card {
-  background: rgba(255,255,255,0.92);
-  border-radius: 18px;
-  padding: 1.4rem 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(249, 4, 77, 0.07);
-}
-
-.volunteer-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.05rem;
-  color: #5c1224;
-}
-
-.volunteer-desc {
-  margin: 0;
-  font-size: 0.92rem;
-  opacity: 0.95;
-  line-height: 1.6;
 }
 
 /* ===========================
@@ -934,5 +902,6 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
 
 
