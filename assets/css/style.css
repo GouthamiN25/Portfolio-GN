@@ -615,20 +615,6 @@ main,
   overflow: hidden;
 }
 
-/* Golden Gate background image */
-#volunteer .panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../images/about/golden-gate-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.38;
-  z-index: 0;
-  pointer-events: none;
-}
-
 /* soft pink mist above image */
 #volunteer .panel::after {
   content: "";
@@ -902,6 +888,7 @@ main,
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
